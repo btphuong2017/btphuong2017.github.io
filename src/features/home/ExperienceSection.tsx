@@ -1,8 +1,7 @@
 import { Section } from "@/shared/components/Section"
 import { Container } from "@/shared/components/Container"
 import { SectionHeader } from "@/shared/components/SectionHeader"
-import { ContentCard } from "@/shared/components/ContentCard"
-import { CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Briefcase, Calendar } from "lucide-react"
 import experience from "@/data/experience.json"
@@ -25,7 +24,7 @@ export function ExperienceSection() {
             {experience.map((job) => (
               <div key={job.id} className="flex gap-4">
                 <div className="mt-3 hidden h-full w-px bg-border sm:block" />
-                <ContentCard className="flex-1">
+                <Card className="flex-1 rounded-xl border border-border bg-card/80 shadow-none">
                   <CardHeader className="pb-2">
                     <div className="flex flex-wrap items-start justify-between gap-3">
                       <div className="space-y-1">
@@ -61,7 +60,7 @@ export function ExperienceSection() {
                       </ul>
                     )}
                   </CardContent>
-                </ContentCard>
+                </Card>
               </div>
             ))}
           </div>

@@ -2,7 +2,7 @@ import { Section } from "@/shared/components/Section"
 import { Container } from "@/shared/components/Container"
 import { SectionHeader } from "@/shared/components/SectionHeader"
 import { ContentCard } from "@/shared/components/ContentCard"
-import { Tag } from "@/shared/components/Tag"
+import { Badge } from "@/components/ui/badge"
 import { Sparkles } from "lucide-react"
 import skills from "@/data/skills.json"
 
@@ -35,11 +35,13 @@ export function SkillsSection() {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {group.items.map((skill) => (
-                    <Tag
+                    <Badge
                       key={skill}
+                      variant="outline"
+                      className="border-border bg-background/60 text-xs font-normal text-muted-foreground"
                     >
                       {skill}
-                    </Tag>
+                    </Badge>
                   ))}
                 </div>
               </ContentCard>

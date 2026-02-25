@@ -1,10 +1,9 @@
 import { Section } from "@/shared/components/Section"
 import { Container } from "@/shared/components/Container"
 import { SectionHeader } from "@/shared/components/SectionHeader"
-import { ContentCard } from "@/shared/components/ContentCard"
-import { CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Tag } from "@/shared/components/Tag"
+import { Badge } from "@/components/ui/badge"
 import { Github, ExternalLink, Folder } from "lucide-react"
 import projects from "@/data/projects.json"
 
@@ -23,7 +22,10 @@ export function ProjectsSection() {
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
-              <ContentCard key={project.id} className="flex h-full flex-col">
+              <Card
+                key={project.id}
+                className="flex h-full flex-col rounded-xl border border-border bg-card/80 shadow-none"
+              >
                 <CardHeader className="pb-3">
                   <CardTitle className="text-base font-semibold text-foreground sm:text-lg">
                     {project.title}
@@ -59,7 +61,13 @@ export function ProjectsSection() {
                       </p>
                       <div className="flex flex-wrap gap-1.5">
                         {project.tech.map((tech) => (
-                          <Tag key={tech}>{tech}</Tag>
+                          <Badge
+                            key={tech}
+                            variant="outline"
+                            className="border-border bg-background/60 text-xs font-normal text-muted-foreground"
+                          >
+                            {tech}
+                          </Badge>
                         ))}
                       </div>
                     </div>
@@ -103,7 +111,7 @@ export function ProjectsSection() {
                     )}
                   </div>
                 </CardContent>
-              </ContentCard>
+              </Card>
             ))}
           </div>
         </div>

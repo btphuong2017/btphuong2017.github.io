@@ -1,9 +1,9 @@
 import * as React from "react"
 
-import { Badge, type BadgeProps } from "@/components/ui/badge"
+import { Badge } from "@/components/ui/badge"
 import { cn } from "@/shared/utils/cn"
 
-export interface TagProps extends BadgeProps {}
+export type TagProps = React.ComponentProps<typeof Badge>
 
 export const Tag = React.forwardRef<HTMLDivElement, TagProps>(
   ({ className, ...props }, ref) => {
