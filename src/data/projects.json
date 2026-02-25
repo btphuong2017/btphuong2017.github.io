@@ -1,0 +1,82 @@
+[
+  {
+    "id": "project-1",
+    "title": "VELA Logistics Platform",
+    "slug": "vela-logistics",
+    "summary": "Multi-portal enterprise logistics platform (Core, Customer, Supplier) serving internal and external users in a 60+ person program.",
+    "highlights": [
+      "Architected Micro Frontend system with one host and multiple remotes for Core, Customer and Supplier portals.",
+      "Implemented Nx Monorepo and multi-tenant architecture to support configuration and isolation per tenant.",
+      "Built CI/CD pipelines with Docker and Kubernetes to streamline releases and improve deployment stability."
+    ],
+    "role": "Frontend Team Lead",
+    "duration": "2023-07 - Present",
+    "tech": ["Angular", "Nx Monorepo", "Micro Frontend", "Docker", "Kubernetes", ".NET"],
+    "url": "",
+    "repo": ""
+  },
+  {
+    "id": "project-2",
+    "title": "SOGUS - Online Examination Platform",
+    "slug": "sogus",
+    "summary": "Online examination and assessment system supporting multiple test formats (multiple choice, essay, etc.).",
+    "highlights": [
+      "Led frontend team to design scalable Angular and React/NextJS architecture for a 10-person team.",
+      "Implemented flows for building tests, assigning exams and reviewing results for candidates.",
+      "Collaborated with stakeholders to clarify requirements and propose technical solutions."
+    ],
+    "role": "Frontend Leader",
+    "duration": "2022-11 - 2023-07",
+    "tech": ["Angular", "React", "Next.js", "Java", "PostgreSQL"],
+    "url": "",
+    "repo": ""
+  },
+  {
+    "id": "project-3",
+    "title": "Medbuy - E-commerce Platform",
+    "slug": "medbuy",
+    "summary": "E-commerce website for pharmaceutical supply chain with responsive UX and backend integration.",
+    "highlights": [
+      "Developed responsive user interfaces using React and NextJS based on design specifications.",
+      "Collaborated closely with UX/UI designers to improve usability and user experience.",
+      "Integrated frontend with backend APIs and participated in containerized deployment using Docker."
+    ],
+    "role": "Frontend Developer",
+    "duration": "2022-12 - 2023-07",
+    "tech": ["React", "Next.js", "Node.js", "NestJS"],
+    "url": "",
+    "repo": ""
+  },
+  {
+    "id": "project-4",
+    "title": "Kensa Order System",
+    "slug": "kensa-order",
+    "summary": "Order and revenue management system with Admin and Customer portals.",
+    "highlights": [
+      "Designed and developed fullstack order management system including Admin Portal and Customer Portal.",
+      "Built REST APIs using Laravel to support order processing and reporting features.",
+      "Integrated payment gateways (VNPay, Payoo) and deployed the system on Linux with Docker."
+    ],
+    "role": "Full Stack Developer",
+    "duration": "2021-03 - 2021-07",
+    "tech": ["React", "PHP", "Laravel", "MySQL", "Docker"],
+    "url": "",
+    "repo": ""
+  },
+  {
+    "id": "project-5",
+    "title": "Kilu - Marketplace for Used Motorbikes",
+    "slug": "kilu",
+    "summary": "E-commerce marketplace for buying and selling used motorbikes.",
+    "highlights": [
+      "Developed custom WordPress features based on marketplace business requirements.",
+      "Optimized website performance and SEO ranking for key pages.",
+      "Customized themes and plugins to support listing, search and transaction workflows."
+    ],
+    "role": "Full Stack Developer",
+    "duration": "2020-06 - 2020-10",
+    "tech": ["PHP", "WordPress"],
+    "url": "",
+    "repo": ""
+  }
+]

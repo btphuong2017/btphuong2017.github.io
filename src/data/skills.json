@@ -1,0 +1,30 @@
+[
+  {
+    "category": "Frontend Frameworks",
+    "items": ["Angular", "React", "Next.js", "RxJS", "Reactive Forms"]
+  },
+  {
+    "category": "UI & Styling",
+    "items": ["Tailwind CSS", "Angular Material", "Ant Design", "Ng-Zorro", "Bootstrap", "Storybook"]
+  },
+  {
+    "category": "Performance & Architecture",
+    "items": ["Nx Monorepo", "Micro Frontend", "Module Federation", "Lazy Loading", "Code Splitting", "Bundle Optimization", "Caching Strategies"]
+  },
+  {
+    "category": "Backend & Databases",
+    "items": ["Node.js", "NestJS", "Express", "PHP", "Laravel", "Python", "MySQL", "MongoDB", "PostgreSQL"]
+  },
+  {
+    "category": "DevOps & Deployment",
+    "items": ["Docker", "Kubernetes", "Nginx", "Linux", "AWS", "GitLab CI", "Git"]
+  },
+  {
+    "category": "Testing & Quality",
+    "items": ["Jest", "Cypress", "Unit Testing", "E2E Testing", "ESLint", "Prettier"]
+  },
+  {
+    "category": "Build Tools",
+    "items": ["Webpack", "Vite", "NPM", "Composer", "Postman", "Swagger", "Figma"]
+  }
+]

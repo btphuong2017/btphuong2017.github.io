@@ -1,0 +1,45 @@
+[
+  {
+    "id": "job-1",
+    "company": "VELA Digitalized Logistics",
+    "role": "Frontend Team Leader",
+    "start": "2023-07",
+    "end": "Present",
+    "summary": "Lead a frontend team of 8 developers building a multi-portal, multi-tenant logistics platform (Core, Customer and Supplier portals).",
+    "highlights": [
+      "Designed and implemented a Micro Frontend architecture using Nx Monorepo with one host and multiple remotes, enabling independent deployment and parallel team development.",
+      "Established coding conventions, pull request review processes and a GitFlow-based branching strategy across frontend repositories.",
+      "Built CI/CD pipelines with Docker and Kubernetes, improving deployment consistency and release stability.",
+      "Optimized frontend performance via bundle size reduction, lazy loading and caching strategies.",
+      "Collaborated directly with Product Manager and Backend teams to analyze complex requirements, propose solutions and deliver enterprise-scale portal features."
+    ]
+  },
+  {
+    "id": "job-2",
+    "company": "AMIT GROUP JOINT STOCK COMPANY",
+    "role": "Senior Frontend Developer",
+    "start": "2019-01",
+    "end": "2023-07",
+    "summary": "Led small frontend teams (3–5 developers) to deliver multiple enterprise and customer-facing web applications.",
+    "highlights": [
+      "Developed applications using Angular, React and WordPress with a focus on reusable components and maintainable architecture.",
+      "Built and integrated REST APIs using NodeJS and Laravel to support frontend features.",
+      "Deployed and maintained web applications on Linux servers, including environment setup and production releases.",
+      "Planned and assigned frontend tasks, managed workload distribution and mentored junior developers.",
+      "Defined coding standards, conducted code reviews and participated in estimation, technical scoping and direct customer communication."
+    ]
+  },
+  {
+    "id": "job-3",
+    "company": "AMIT GROUP JOINT STOCK COMPANY",
+    "role": "Frontend Internship",
+    "start": "2018-09",
+    "end": "2018-12",
+    "summary": "Frontend internship focused on building real-world UI and HTTP integration.",
+    "highlights": [
+      "Converted PSD designs to responsive HTML/CSS and implemented interactive behavior with JavaScript.",
+      "Worked with AJAX to process data between client and server.",
+      "Supported senior developers in building and debugging production features, gaining foundational experience with modern frontend workflows."
+    ]
+  }
+]

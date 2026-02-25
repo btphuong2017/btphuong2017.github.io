@@ -1,0 +1,20 @@
+{
+  "home.title": "Chào mừng",
+  "home.description": "Đây là phiên bản tiếng Việt của portfolio.",
+  "skills.title": "Kỹ Năng & Chuyên Môn",
+  "skills.description": "Các công nghệ và công cụ mà tôi sử dụng",
+  "experience.title": "Kinh Nghiệm Làm Việc",
+  "experience.description": "Hành trình sự nghiệp của tôi",
+  "projects.title": "Các Dự Án Nổi Bật",
+  "projects.description": "Những công việc đã thực hiện và case studies",
+  "contact.email": "Email",
+  "contact.phone": "Điện Thoại",
+  "contact.zalo": "Zalo",
+  "contact.title": "Liên Hệ",
+  "nav.home": "Trang Chủ",
+  "nav.about": "Về Tôi",
+  "nav.skills": "Kỹ Năng",
+  "nav.experience": "Kinh Nghiệm",
+  "nav.projects": "Dự Án",
+  "nav.contact": "Liên Hệ"
+}

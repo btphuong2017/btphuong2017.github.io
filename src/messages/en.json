@@ -1,0 +1,20 @@
+{
+  "home.title": "Welcome",
+  "home.description": "This is the English version of the portfolio.",
+  "skills.title": "Skills & Expertise",
+  "skills.description": "Technologies and tools I work with",
+  "experience.title": "Work Experience",
+  "experience.description": "My professional journey",
+  "projects.title": "Featured Projects",
+  "projects.description": "Selected work and case studies",
+  "contact.email": "Email",
+  "contact.phone": "Phone",
+  "contact.zalo": "Zalo",
+  "contact.title": "Get In Touch",
+  "nav.home": "Home",
+  "nav.about": "About",
+  "nav.skills": "Skills",
+  "nav.experience": "Experience",
+  "nav.projects": "Projects",
+  "nav.contact": "Contact"
+}
