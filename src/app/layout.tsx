@@ -15,8 +15,15 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "A modern portfolio built with Next.js, TypeScript, Tailwind CSS and shadcn/ui",
+  title: "Phuong Bui Thanh — Portfolio",
+  description:
+    "Frontend Architect & Team Lead – Micro Frontend (Nx), multi-tenant logistics, Angular & React/Next.js.",
+  icons: {
+    icon: [
+      { url: "/favicon_light.png", media: "(prefers-color-scheme: light)" },
+      { url: "/favicon_dark.png", media: "(prefers-color-scheme: dark)" },
+    ],
+  },
 }
 
 export default function RootLayout({

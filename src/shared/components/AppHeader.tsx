@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { usePathname } from "next/navigation"
@@ -20,14 +21,23 @@ export function AppHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <Container className="flex h-16 items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="size-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center font-bold text-primary-foreground">
-            PB
+        <a
+          href={currentLocale === "en" ? "/en" : "/vi"}
+          className="flex items-center gap-2"
+        >
+          <div className="relative h-8 w-8 sm:h-9 sm:w-9">
+            <Image
+              src="/logo_full.png"
+              alt={t("portfolio")}
+              fill
+              sizes="36px"
+              className="object-contain"
+            />
           </div>
           <span className="font-semibold text-base sm:text-lg text-foreground">
             {t("portfolio")}
           </span>
-        </div>
+        </a>
 
         <nav className="flex items-center gap-4">
           <div className="hidden md:flex items-center gap-4 text-sm">
