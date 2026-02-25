@@ -1,3 +1,7 @@
+"use client"
+
+import { useTranslations } from "@/shared/context/I18nContext"
+
 import { Section } from "@/shared/components/Section"
 import { Container } from "@/shared/components/Container"
 import { SectionHeader } from "@/shared/components/SectionHeader"
@@ -7,15 +11,17 @@ import { Briefcase, Calendar } from "lucide-react"
 import experience from "@/data/experience.json"
 
 export function ExperienceSection() {
+  const t = useTranslations("experience")
+
   return (
     <Section id="experience">
       <Container>
         <div className="space-y-10">
           <SectionHeader
             icon={<Briefcase className="size-3" />}
-            label="Experience"
-            title="Professional journey"
-            description="8+ years growing teams, shipping products, and shaping frontend architecture."
+            label={t("label")}
+            title={t("title")}
+            description={t("description")}
             align="center"
             className="md:text-center"
           />

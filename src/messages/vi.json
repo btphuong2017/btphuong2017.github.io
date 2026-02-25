@@ -1,20 +1,124 @@
 {
-  "home.title": "Chào mừng",
-  "home.description": "Đây là phiên bản tiếng Việt của portfolio.",
-  "skills.title": "Kỹ Năng & Chuyên Môn",
-  "skills.description": "Các công nghệ và công cụ mà tôi sử dụng",
-  "experience.title": "Kinh Nghiệm Làm Việc",
-  "experience.description": "Hành trình sự nghiệp của tôi",
-  "projects.title": "Các Dự Án Nổi Bật",
-  "projects.description": "Những công việc đã thực hiện và case studies",
-  "contact.email": "Email",
-  "contact.phone": "Điện Thoại",
-  "contact.zalo": "Zalo",
-  "contact.title": "Liên Hệ",
-  "nav.home": "Trang Chủ",
-  "nav.about": "Về Tôi",
-  "nav.skills": "Kỹ Năng",
-  "nav.experience": "Kinh Nghiệm",
-  "nav.projects": "Dự Án",
-  "nav.contact": "Liên Hệ"
+  "hero": {
+    "pillTitle": "Kiến trúc sư Frontend & Trưởng nhóm",
+    "summary": "Thiết kế hệ thống Micro Frontend và dẫn dắt 8 lập trình viên frontend trong tổ chức 60 người. Hơn 8 năm xây dựng ứng dụng web hiệu năng cao với Angular và React/Next.js, nền tảng đa tenant, và CI/CD với Docker và Kubernetes.",
+    "greeting": "Xin chào, tôi là",
+    "cta": "Liên hệ",
+    "viewProjects": "Xem dự án",
+    "downloadCv": "Tải CV",
+    "stats": {
+      "years": "Năm kinh nghiệm",
+      "teams": "Đội đã dẫn dắt",
+      "shipped": "Sản phẩm & sáng kiến đã triển khai"
+    },
+    "avatarAlt": "Chân dung Phuong Bui Thanh"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "impact": "Tác động",
+    "experience": "Kinh nghiệm",
+    "projects": "Dự án",
+    "about": "Giới thiệu",
+    "skills": "Kỹ năng",
+    "contact": "Liên hệ",
+    "portfolio": "Portfolio",
+    "themeToggle": "Đổi giao diện sáng / tối"
+  },
+  "impact": {
+    "label": "Tác động",
+    "title": "Quy mô và trách nhiệm",
+    "description": "Các chỉ số cụ thể từ công việc kiến trúc và lãnh đạo.",
+    "yearsLabel": "Năm kinh nghiệm",
+    "yearsDesc": "Phát triển frontend và dẫn dắt đội ngũ",
+    "teamsLabel": "Lập trình viên đã dẫn dắt",
+    "teamsDesc": "Đội frontend tại VELA Logistics",
+    "architectureLabel": "Micro Frontend",
+    "architectureDesc": "Nx Monorepo, host + remotes",
+    "scaleLabel": "Cổng",
+    "scaleDesc": "Core, Customer, Supplier",
+    "domainLabel": "Sản phẩm đã triển khai",
+    "domainDesc": "Doanh nghiệp và hướng người dùng"
+  },
+  "footer": {
+    "navigation": "Điều hướng",
+    "contact": "Liên hệ",
+    "home": "Trang chủ",
+    "impact": "Tác động",
+    "experience": "Kinh nghiệm",
+    "projects": "Dự án",
+    "about": "Giới thiệu",
+    "skills": "Kỹ năng",
+    "copyright": "Bảo lưu mọi quyền.",
+    "aria": {
+      "github": "Mở GitHub",
+      "linkedin": "Mở LinkedIn",
+      "email": "Gửi email"
+    }
+  },
+  "experience": {
+    "label": "Kinh nghiệm",
+    "title": "Hành trình nghề nghiệp",
+    "description": "Hơn 8 năm xây dựng đội ngũ, triển khai sản phẩm và định hình kiến trúc frontend."
+  },
+  "projects": {
+    "label": "Case study",
+    "title": "Công việc phản ánh cách tôi xây dựng",
+    "description": "Vấn đề, giải pháp và tác động trong các team doanh nghiệp và sản phẩm.",
+    "tech": "Công nghệ",
+    "code": "Mã nguồn",
+    "live": "Demo",
+    "problem": "Vấn đề",
+    "solution": "Giải pháp",
+    "impact": "Tác động",
+    "vela": {
+      "problem": "Cần nền tảng logistics đa cổng, mở rộng cho nội bộ và bên ngoài, triển khai độc lập và tách biệt theo tenant.",
+      "solution": "Thiết kế Micro Frontend (Nx, host + remotes) cho Core, Customer, Supplier; cấu hình đa tenant; CI/CD với Docker và Kubernetes.",
+      "impact": "Chương trình 60+ người; 3 cổng; phát triển song song và phát hành ổn định."
+    },
+    "sogus": {
+      "problem": "Nền tảng thi trực tuyến cần định dạng đề linh hoạt và frontend mở rộng cho team 10 người.",
+      "solution": "Dẫn dắt thiết kế frontend với Angular và React/Next.js; xây dựng luồng tạo đề, gán bài thi, chấm kết quả.",
+      "impact": "Vòng đời thi thống nhất; hợp tác với stakeholder về yêu cầu và giải pháp kỹ thuật."
+    },
+    "medbuy": {
+      "problem": "Thương mại điện tử chuỗi cung ứng dược với UX responsive và tích hợp backend ổn định.",
+      "solution": "Phát triển UI responsive bằng React và Next.js; tích hợp API; triển khai container với Docker.",
+      "impact": "Cải thiện trải nghiệm và bám sát thiết kế UX/UI; sẵn sàng production."
+    },
+    "kensa": {
+      "problem": "Quản lý đơn hàng và doanh thu với cổng Admin và Customer và tích hợp thanh toán.",
+      "solution": "Hệ thống đơn hàng fullstack với REST API Laravel; tích hợp VNPay, Payoo; triển khai Linux với Docker.",
+      "impact": "Xử lý đơn và báo cáo end-to-end; luồng thanh toán trực tuyến."
+    },
+    "kilu": {
+      "problem": "Marketplace xe máy cũ với đăng tin, tìm kiếm và giao dịch.",
+      "solution": "Tính năng WordPress tùy biến, tùy chỉnh theme và plugin; tối ưu hiệu năng và SEO.",
+      "impact": "Trang quan trọng xếp hạng; hỗ trợ luồng marketplace."
+    }
+  },
+  "about": {
+    "label": "Giới thiệu",
+    "title": "Ưu tiên kiến trúc, ưu tiên đội ngũ",
+    "description": "Tôi thiết kế hệ thống có thể mở rộng và đội ngũ có thể ship. Với vai trò Kiến trúc sư Frontend và Trưởng nhóm tại VELA, tôi định nghĩa chiến lược Micro Frontend bằng Nx (một host, nhiều remotes), xây dựng CI/CD với Docker và Kubernetes, và dẫn dắt 8 lập trình viên frontend trong chương trình 60 người. Tôi tập trung vào component tái sử dụng, hiệu năng và ownership rõ ràng để nhiều cổng và tenant có thể phát triển song song. Nền tảng của tôi bao gồm Angular và React/Next.js, nền tảng logistics đa tenant, thương mại điện tử và fullstack—luôn chú trọng khả năng bảo trì và tác động đo lường được."
+  },
+  "skills": {
+    "label": "Kỹ năng",
+    "title": "Bộ công cụ cho team sản phẩm hiện đại",
+    "description": "Bao phủ toàn stack, tập trung vào frontend chất lượng cao, design system và hợp tác.",
+    "skillCount": "kỹ năng",
+    "groups": {
+      "architecture": "Kiến trúc",
+      "frameworks": "Frameworks",
+      "devops": "DevOps",
+      "performance": "Hiệu năng",
+      "backend": "Tích hợp Backend"
+    }
+  },
+  "contact": {
+    "label": "Liên hệ",
+    "title": "Cùng hợp tác",
+    "description": "Mở với vai trò kiến trúc và trưởng nhóm. Liên hệ cho dự án, chia sẻ hoặc trò chuyện.",
+    "cta": "Liên hệ",
+    "downloadCv": "Tải CV"
+  }
 }

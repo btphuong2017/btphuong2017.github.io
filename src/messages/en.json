@@ -1,20 +1,124 @@
 {
-  "home.title": "Welcome",
-  "home.description": "This is the English version of the portfolio.",
-  "skills.title": "Skills & Expertise",
-  "skills.description": "Technologies and tools I work with",
-  "experience.title": "Work Experience",
-  "experience.description": "My professional journey",
-  "projects.title": "Featured Projects",
-  "projects.description": "Selected work and case studies",
-  "contact.email": "Email",
-  "contact.phone": "Phone",
-  "contact.zalo": "Zalo",
-  "contact.title": "Get In Touch",
-  "nav.home": "Home",
-  "nav.about": "About",
-  "nav.skills": "Skills",
-  "nav.experience": "Experience",
-  "nav.projects": "Projects",
-  "nav.contact": "Contact"
+  "hero": {
+    "pillTitle": "Frontend Architect & Team Lead",
+    "summary": "Architect of Micro Frontend systems and lead of 8 frontend developers in a 60-person organization. 8+ years building high-performance web applications with Angular and React/Next.js, multi-tenant platforms, and CI/CD with Docker and Kubernetes.",
+    "greeting": "Hello, I'm",
+    "cta": "Get in touch",
+    "viewProjects": "View projects",
+    "downloadCv": "Download CV",
+    "stats": {
+      "years": "Years of experience",
+      "teams": "Teams led",
+      "shipped": "Products and initiatives shipped"
+    },
+    "avatarAlt": "Portrait of Phuong Bui Thanh"
+  },
+  "nav": {
+    "home": "Home",
+    "impact": "Impact",
+    "experience": "Experience",
+    "projects": "Projects",
+    "about": "About",
+    "skills": "Skills",
+    "contact": "Contact",
+    "portfolio": "Portfolio",
+    "themeToggle": "Toggle color theme"
+  },
+  "impact": {
+    "label": "Impact",
+    "title": "Evidence of scale and ownership",
+    "description": "Concrete metrics from architecture and leadership work.",
+    "yearsLabel": "Years experience",
+    "yearsDesc": "Frontend development and team leadership",
+    "teamsLabel": "Developers led",
+    "teamsDesc": "Frontend team at VELA Logistics",
+    "architectureLabel": "Micro Frontend",
+    "architectureDesc": "Nx Monorepo, host + remotes",
+    "scaleLabel": "Portals",
+    "scaleDesc": "Core, Customer, Supplier",
+    "domainLabel": "Products shipped",
+    "domainDesc": "Enterprise and customer-facing"
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "home": "Home",
+    "impact": "Impact",
+    "experience": "Experience",
+    "projects": "Projects",
+    "about": "About",
+    "skills": "Skills",
+    "copyright": "All rights reserved.",
+    "aria": {
+      "github": "Open GitHub profile",
+      "linkedin": "Open LinkedIn profile",
+      "email": "Send email"
+    }
+  },
+  "experience": {
+    "label": "Experience",
+    "title": "Professional journey",
+    "description": "8+ years growing teams, shipping products, and shaping frontend architecture."
+  },
+  "projects": {
+    "label": "Case studies",
+    "title": "Work that reflects how I build",
+    "description": "Problem, solution, and impact across enterprise and product teams.",
+    "tech": "Tech",
+    "code": "Code",
+    "live": "Live",
+    "problem": "Problem",
+    "solution": "Solution",
+    "impact": "Impact",
+    "vela": {
+      "problem": "Need a scalable, multi-portal logistics platform for internal and external users with independent deployment and tenant isolation.",
+      "solution": "Architected Micro Frontend (Nx, host + remotes) for Core, Customer, and Supplier portals; multi-tenant config; CI/CD with Docker and Kubernetes.",
+      "impact": "60+ person program; 3 portals; parallel team development and stable releases."
+    },
+    "sogus": {
+      "problem": "Online examination platform requiring flexible test formats and scalable frontend for a 10-person team.",
+      "solution": "Led frontend design with Angular and React/Next.js; built flows for creating tests, assigning exams, and reviewing results.",
+      "impact": "Unified exam lifecycle; collaboration with stakeholders on requirements and technical solutions."
+    },
+    "medbuy": {
+      "problem": "E-commerce for pharmaceutical supply chain with responsive UX and reliable backend integration.",
+      "solution": "Developed responsive UIs in React and Next.js; integrated APIs; containerized deployment with Docker.",
+      "impact": "Improved usability and alignment with UX/UI design; production-ready deployment."
+    },
+    "kensa": {
+      "problem": "Order and revenue management with Admin and Customer portals and payment integration.",
+      "solution": "Fullstack order system with Laravel REST APIs; integrated VNPay and Payoo; deployed on Linux with Docker.",
+      "impact": "End-to-end order processing and reporting; live payment flows."
+    },
+    "kilu": {
+      "problem": "Marketplace for used motorbikes with listing, search, and transaction workflows.",
+      "solution": "Custom WordPress features, theme and plugin customization; performance and SEO optimization.",
+      "impact": "Key pages ranked; marketplace workflows supported."
+    }
+  },
+  "about": {
+    "label": "About",
+    "title": "Architecture-first, team-first",
+    "description": "I design systems that scale and teams that ship. As Frontend Architect and Team Lead at VELA, I defined the Micro Frontend strategy using Nx (one host, multiple remotes), established CI/CD with Docker and Kubernetes, and led 8 frontend developers across a 60-person program. I focus on reusable components, performance, and clear ownership so that multiple portals and tenants can evolve in parallel. My background spans Angular and React/Next.js, multi-tenant logistics platforms, e-commerce, and fullstack delivery—always with an eye on maintainability and measurable impact."
+  },
+  "skills": {
+    "label": "Skills",
+    "title": "A toolbox for modern product teams",
+    "description": "Breadth across the stack, with a focus on high-quality frontend, design systems, and collaboration.",
+    "skillCount": "skills",
+    "groups": {
+      "architecture": "Architecture",
+      "frameworks": "Frameworks",
+      "devops": "DevOps",
+      "performance": "Performance",
+      "backend": "Backend integration"
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's work together",
+    "description": "Open to architect and team-lead roles. Reach out for projects, talks, or a conversation.",
+    "cta": "Get in touch",
+    "downloadCv": "Download CV"
+  }
 }

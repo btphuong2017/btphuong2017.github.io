@@ -1,12 +1,17 @@
+"use client"
+
 import Image from "next/image"
 
 import { Section } from "@/shared/components/Section"
+import { useTranslations } from "@/shared/context/I18nContext"
 import { Container } from "@/shared/components/Container"
-import { Mail, ArrowRight } from "lucide-react"
+import { Mail, ArrowRight, FileDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import profile from "@/data/profile.json"
 
 export function HeroSection() {
+  const t = useTranslations("hero")
+
   return (
     <Section
       id="home"
@@ -18,14 +23,14 @@ export function HeroSection() {
             <div className="flex justify-start">
               <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/80 px-3 py-1 text-xs font-medium text-muted-foreground">
                 <span className="inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
-                <span>{profile.title}</span>
+                <span>{t("pillTitle")}</span>
               </div>
             </div>
 
             <div className="space-y-6">
               <div className="space-y-3">
                 <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                  Hello, I&apos;m
+                  {t("greeting")}
                 </p>
                 <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
                   {profile.name}
@@ -34,7 +39,7 @@ export function HeroSection() {
 
               <div className="space-y-4">
                 <p className="max-w-2xl text-sm text-muted-foreground sm:text-base leading-relaxed">
-                  {profile.bio}
+                  {t("summary")}
                 </p>
               </div>
             </div>
@@ -46,7 +51,18 @@ export function HeroSection() {
                   className="inline-flex items-center gap-2"
                 >
                   <Mail className="size-4" />
-                  <span>Get in touch</span>
+                  <span>{t("cta")}</span>
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <a
+                  href="/CV - Phuong Bui Thanh.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2"
+                >
+                  <FileDown className="size-4" />
+                  <span>{t("downloadCv")}</span>
                 </a>
               </Button>
               <button
@@ -57,7 +73,7 @@ export function HeroSection() {
                   el?.scrollIntoView({ behavior: "smooth", block: "start" })
                 }}
               >
-                <span>View projects</span>
+                <span>{t("viewProjects")}</span>
                 <ArrowRight className="size-4" />
               </button>
             </div>
@@ -68,21 +84,21 @@ export function HeroSection() {
                   8+
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Years of experience
+                  {t("stats.years")}
                 </p>
               </div>
               <div className="space-y-1">
                 <p className="text-2xl font-semibold text-foreground sm:text-3xl">
                   3+
                 </p>
-                <p className="text-sm text-muted-foreground">Teams led</p>
+                <p className="text-sm text-muted-foreground">{t("stats.teams")}</p>
               </div>
               <div className="space-y-1">
                 <p className="text-2xl font-semibold text-foreground sm:text-3xl">
                   15+
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Products and initiatives shipped
+                  {t("stats.shipped")}
                 </p>
               </div>
             </div>
@@ -92,7 +108,7 @@ export function HeroSection() {
             <div className="relative h-56 w-56 overflow-hidden rounded-2xl border border-border/80 bg-card shadow-sm sm:h-64 sm:w-64 md:h-72 md:w-72">
               <Image
                 src="/avatar.jpg"
-                alt="Portrait of Phuong Bui Thanh"
+                alt={t("avatarAlt")}
                 fill
                 priority
                 sizes="(min-width: 768px) 20rem, 16rem"
