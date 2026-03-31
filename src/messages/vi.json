@@ -1,7 +1,7 @@
 {
   "hero": {
     "pillTitle": "Kiến trúc sư Frontend & Trưởng nhóm",
-    "summary": "Thiết kế hệ thống Micro Frontend và dẫn dắt 8 lập trình viên frontend trong tổ chức 60 người. Hơn 8 năm xây dựng ứng dụng web hiệu năng cao với Angular và React/Next.js, nền tảng đa tenant, và CI/CD với Docker và Kubernetes.",
+    "summary": "Kiến trúc và dẫn dắt frontend cho chương trình logistics 60+ người với 3 cổng sản phẩm. Xây dựng Micro Frontend bằng Nx (host + remotes), chuẩn hóa delivery với CI/CD Docker/Kubernetes. Hơn 8 năm kinh nghiệm với Angular và React/Next.js, tập trung hiệu năng, khả năng mở rộng và tốc độ ship.",
     "greeting": "Xin chào, tôi là",
     "cta": "Liên hệ",
     "viewProjects": "Xem dự án",
@@ -67,10 +67,13 @@
     "tech": "Công nghệ",
     "code": "Mã nguồn",
     "live": "Demo",
+    "featuredLabel": "Case study nổi bật",
+    "githubProfile": "GitHub cá nhân",
+    "requestCaseStudy": "Yêu cầu case study",
     "problem": "Vấn đề",
     "solution": "Giải pháp",
     "impact": "Tác động",
-    "vela": {
+    "vela-logistics": {
       "problem": "Cần nền tảng logistics đa cổng, mở rộng cho nội bộ và bên ngoài, triển khai độc lập và tách biệt theo tenant.",
       "solution": "Thiết kế Micro Frontend (Nx, host + remotes) cho Core, Customer, Supplier; cấu hình đa tenant; CI/CD với Docker và Kubernetes.",
       "impact": "Chương trình 60+ người; 3 cổng; phát triển song song và phát hành ổn định."
@@ -85,7 +88,7 @@
       "solution": "Phát triển UI responsive bằng React và Next.js; tích hợp API; triển khai container với Docker.",
       "impact": "Cải thiện trải nghiệm và bám sát thiết kế UX/UI; sẵn sàng production."
     },
-    "kensa": {
+    "kensa-order": {
       "problem": "Quản lý đơn hàng và doanh thu với cổng Admin và Customer và tích hợp thanh toán.",
       "solution": "Hệ thống đơn hàng fullstack với REST API Laravel; tích hợp VNPay, Payoo; triển khai Linux với Docker.",
       "impact": "Xử lý đơn và báo cáo end-to-end; luồng thanh toán trực tuyến."
@@ -99,7 +102,7 @@
   "about": {
     "label": "Giới thiệu",
     "title": "Ưu tiên kiến trúc, ưu tiên đội ngũ",
-    "description": "Tôi thiết kế hệ thống có thể mở rộng và đội ngũ có thể ship. Với vai trò Kiến trúc sư Frontend và Trưởng nhóm tại VELA, tôi định nghĩa chiến lược Micro Frontend bằng Nx (một host, nhiều remotes), xây dựng CI/CD với Docker và Kubernetes, và dẫn dắt 8 lập trình viên frontend trong chương trình 60 người. Tôi tập trung vào component tái sử dụng, hiệu năng và ownership rõ ràng để nhiều cổng và tenant có thể phát triển song song. Nền tảng của tôi bao gồm Angular và React/Next.js, nền tảng logistics đa tenant, thương mại điện tử và fullstack—luôn chú trọng khả năng bảo trì và tác động đo lường được."
+    "description": "Tôi tập trung vào 3 mục tiêu: kiến trúc mở rộng được, đội ngũ ship ổn định và tác động đo lường được. Tại VELA, tôi định nghĩa chiến lược Micro Frontend (Nx, 1 host + nhiều remotes), xây CI/CD với Docker/Kubernetes và dẫn dắt 8 frontend developers trong chương trình 60+ người. Cách làm của tôi ưu tiên ownership rõ ràng, component tái sử dụng, hiệu năng và khả năng vận hành để nhiều cổng/tenant phát triển song song mà vẫn giữ chất lượng."
   },
   "skills": {
     "label": "Kỹ năng",
@@ -117,7 +120,7 @@
   "contact": {
     "label": "Liên hệ",
     "title": "Cùng hợp tác",
-    "description": "Mở với vai trò kiến trúc và trưởng nhóm. Liên hệ cho dự án, chia sẻ hoặc trò chuyện.",
+    "description": "Sẵn sàng cho vai trò Frontend Architect/Team Lead. Ưu tiên các bài toán scale, kiến trúc sản phẩm và nâng năng lực đội ngũ.",
     "cta": "Liên hệ",
     "downloadCv": "Tải CV"
   }

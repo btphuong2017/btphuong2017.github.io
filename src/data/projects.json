@@ -12,6 +12,11 @@
     "role": "Frontend Team Lead",
     "duration": "2023-07 - Present",
     "tech": ["Angular", "Nx Monorepo", "Micro Frontend", "Docker", "Kubernetes", ".NET"],
+    "metrics": [
+      "60+ person program",
+      "3 portals",
+      "Parallel development & stable releases"
+    ],
     "url": "",
     "repo": ""
   },
@@ -28,6 +33,7 @@
     "role": "Frontend Leader",
     "duration": "2022-11 - 2023-07",
     "tech": ["Angular", "React", "Next.js", "Java", "PostgreSQL"],
+    "metrics": ["10-person team", "Flexible exam formats", "Unified exam lifecycle"],
     "url": "",
     "repo": ""
   },
@@ -44,6 +50,7 @@
     "role": "Frontend Developer",
     "duration": "2022-12 - 2023-07",
     "tech": ["React", "Next.js", "Node.js", "NestJS"],
+    "metrics": ["Responsive UX", "Backend API integration", "Docker deployment"],
     "url": "",
     "repo": ""
   },
@@ -60,6 +67,7 @@
     "role": "Full Stack Developer",
     "duration": "2021-03 - 2021-07",
     "tech": ["React", "PHP", "Laravel", "MySQL", "Docker"],
+    "metrics": ["Admin + Customer portals", "VNPay + Payoo payments", "Docker on Linux"],
     "url": "",
     "repo": ""
   },
@@ -76,6 +84,7 @@
     "role": "Full Stack Developer",
     "duration": "2020-06 - 2020-10",
     "tech": ["PHP", "WordPress"],
+    "metrics": ["Marketplace workflows", "Performance + SEO optimization"],
     "url": "",
     "repo": ""
   }

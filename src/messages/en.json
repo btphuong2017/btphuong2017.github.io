@@ -1,7 +1,7 @@
 {
   "hero": {
     "pillTitle": "Frontend Architect & Team Lead",
-    "summary": "Architect of Micro Frontend systems and lead of 8 frontend developers in a 60-person organization. 8+ years building high-performance web applications with Angular and React/Next.js, multi-tenant platforms, and CI/CD with Docker and Kubernetes.",
+    "summary": "I lead frontend architecture and delivery in a 60+ person logistics program across 3 product portals. I built Micro Frontend with Nx (host + remotes) and standardized delivery through Docker/Kubernetes CI/CD. 8+ years with Angular and React/Next.js, focused on scalability, performance, and faster shipping.",
     "greeting": "Hello, I'm",
     "cta": "Get in touch",
     "viewProjects": "View projects",
@@ -67,10 +67,13 @@
     "tech": "Tech",
     "code": "Code",
     "live": "Live",
+    "featuredLabel": "Featured case study",
+    "githubProfile": "GitHub profile",
+    "requestCaseStudy": "Request case study",
     "problem": "Problem",
     "solution": "Solution",
     "impact": "Impact",
-    "vela": {
+    "vela-logistics": {
       "problem": "Need a scalable, multi-portal logistics platform for internal and external users with independent deployment and tenant isolation.",
       "solution": "Architected Micro Frontend (Nx, host + remotes) for Core, Customer, and Supplier portals; multi-tenant config; CI/CD with Docker and Kubernetes.",
       "impact": "60+ person program; 3 portals; parallel team development and stable releases."
@@ -85,7 +88,7 @@
       "solution": "Developed responsive UIs in React and Next.js; integrated APIs; containerized deployment with Docker.",
       "impact": "Improved usability and alignment with UX/UI design; production-ready deployment."
     },
-    "kensa": {
+    "kensa-order": {
       "problem": "Order and revenue management with Admin and Customer portals and payment integration.",
       "solution": "Fullstack order system with Laravel REST APIs; integrated VNPay and Payoo; deployed on Linux with Docker.",
       "impact": "End-to-end order processing and reporting; live payment flows."
@@ -99,7 +102,7 @@
   "about": {
     "label": "About",
     "title": "Architecture-first, team-first",
-    "description": "I design systems that scale and teams that ship. As Frontend Architect and Team Lead at VELA, I defined the Micro Frontend strategy using Nx (one host, multiple remotes), established CI/CD with Docker and Kubernetes, and led 8 frontend developers across a 60-person program. I focus on reusable components, performance, and clear ownership so that multiple portals and tenants can evolve in parallel. My background spans Angular and React/Next.js, multi-tenant logistics platforms, e-commerce, and fullstack delivery—always with an eye on maintainability and measurable impact."
+    "description": "My focus is simple: scalable architecture, reliable team delivery, and measurable impact. At VELA, I defined the Micro Frontend strategy with Nx (one host, multiple remotes), built Docker/Kubernetes CI/CD, and led 8 frontend developers in a 60+ person program. I drive clear ownership, reusable components, and performance discipline so multi-portal, multi-tenant products can evolve in parallel without sacrificing quality."
   },
   "skills": {
     "label": "Skills",
@@ -117,7 +120,7 @@
   "contact": {
     "label": "Contact",
     "title": "Let's work together",
-    "description": "Open to architect and team-lead roles. Reach out for projects, talks, or a conversation.",
+    "description": "Open to Frontend Architect and Team Lead opportunities, especially where scale, product ownership, and team growth matter.",
     "cta": "Get in touch",
     "downloadCv": "Download CV"
   }
