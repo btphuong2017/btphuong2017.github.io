@@ -73,6 +73,10 @@
     "problem": "Problem",
     "solution": "Solution",
     "impact": "Impact",
+    "businessGoal": "Business goal",
+    "constraints": "Constraints",
+    "decision": "Decision",
+    "outcome": "Outcome",
     "vela-logistics": {
       "problem": "Need a scalable, multi-portal logistics platform for internal and external users with independent deployment and tenant isolation.",
       "solution": "Architected Micro Frontend (Nx, host + remotes) for Core, Customer, and Supplier portals; multi-tenant config; CI/CD with Docker and Kubernetes.",

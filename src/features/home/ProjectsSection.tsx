@@ -41,6 +41,19 @@ export function ProjectsSection() {
     ? projects.filter((p) => p.id !== featuredProjectId)
     : projects
 
+  const pushGtmEvent = (
+    eventName: string,
+    payload: Record<string, unknown>
+  ) => {
+    try {
+      const w = window as unknown as { dataLayer?: unknown[] }
+      w.dataLayer = w.dataLayer ?? []
+      w.dataLayer.push({ event: eventName, ...payload })
+    } catch {
+      // Never break UX
+    }
+  }
+
   return (
     <Section id="projects">
       <Container>
@@ -79,22 +92,39 @@ export function ProjectsSection() {
 
             <CardContent className="flex flex-1 flex-col gap-4">
               {featuredHasCase ? (
-                <div className="grid gap-3 md:grid-cols-3">
+                <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
                   <div className="space-y-2 text-sm text-muted-foreground sm:text-base">
                     <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
-                      {t("problem")}
+                      {t("businessGoal")}
                     </p>
                     <p className="leading-relaxed">{featuredProblem}</p>
                   </div>
                   <div className="space-y-2 text-sm text-muted-foreground sm:text-base">
                     <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
-                      {t("solution")}
+                      {t("constraints")}
+                    </p>
+                    <p className="leading-relaxed">
+                      {Array.isArray(
+                        (featuredProject as { metrics?: string[] } | undefined)
+                          ?.metrics
+                      ) &&
+                      (featuredProject as { metrics?: string[] } | undefined)
+                        ?.metrics?.length
+                        ? (featuredProject as { metrics?: string[] }).metrics!
+                            .slice(0, 2)
+                            .join(" • ")
+                        : featuredProblem}
+                    </p>
+                  </div>
+                  <div className="space-y-2 text-sm text-muted-foreground sm:text-base">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
+                      {t("decision")}
                     </p>
                     <p className="leading-relaxed">{featuredSolution}</p>
                   </div>
                   <div className="space-y-2 text-sm text-muted-foreground sm:text-base">
                     <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
-                      {t("impact")}
+                      {t("outcome")}
                     </p>
                     <p className="leading-relaxed">{featuredImpact}</p>
                   </div>
@@ -179,6 +209,13 @@ export function ProjectsSection() {
                       href={featuredProject.repo}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() =>
+                        pushGtmEvent("portfolio_project_cta_click", {
+                          ctaType: "code",
+                          projectSlug: featuredSlugValue ?? null,
+                          isFeatured: true,
+                        })
+                      }
                     >
                       <Github className="mr-1.5 size-3.5" />
                       {t("code")}
@@ -192,6 +229,13 @@ export function ProjectsSection() {
                       href={featuredProject.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() =>
+                        pushGtmEvent("portfolio_project_cta_click", {
+                          ctaType: "live",
+                          projectSlug: featuredSlugValue ?? null,
+                          isFeatured: true,
+                        })
+                      }
                     >
                       <ExternalLink className="mr-1.5 size-3.5" />
                       {t("live")}
@@ -211,6 +255,13 @@ export function ProjectsSection() {
                         href={profile.links?.github ?? "https://github.com"}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() =>
+                          pushGtmEvent("portfolio_project_cta_click", {
+                            ctaType: "github_profile",
+                            projectSlug: featuredSlugValue ?? null,
+                            isFeatured: true,
+                          })
+                        }
                       >
                         <Github className="mr-1.5 size-3.5" />
                         {t("githubProfile")}
@@ -221,6 +272,13 @@ export function ProjectsSection() {
                         href={`mailto:${profile.email}?subject=${encodeURIComponent(
                           `Request case study: ${featuredProject?.title ?? ""}`
                         )}`}
+                        onClick={() =>
+                          pushGtmEvent("portfolio_project_cta_click", {
+                            ctaType: "request_case_study",
+                            projectSlug: featuredSlugValue ?? null,
+                            isFeatured: true,
+                          })
+                        }
                       >
                         <ExternalLink className="mr-1.5 size-3.5" />
                         {t("requestCaseStudy")}
@@ -365,6 +423,16 @@ export function ProjectsSection() {
                             href={project.repo}
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={() =>
+                              pushGtmEvent(
+                                "portfolio_project_cta_click",
+                                {
+                                  ctaType: "code",
+                                  projectSlug: slug ?? null,
+                                  isFeatured: false,
+                                }
+                              )
+                            }
                           >
                             <Github className="mr-1.5 size-3.5" />
                             {t("code")}
@@ -377,6 +445,13 @@ export function ProjectsSection() {
                             href={project.url}
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={() =>
+                              pushGtmEvent("portfolio_project_cta_click", {
+                                ctaType: "live",
+                                projectSlug: slug ?? null,
+                                isFeatured: false,
+                              })
+                            }
                           >
                             <ExternalLink className="mr-1.5 size-3.5" />
                             {t("live")}
@@ -395,6 +470,16 @@ export function ProjectsSection() {
                               href={profile.links?.github ?? "https://github.com"}
                               target="_blank"
                               rel="noopener noreferrer"
+                              onClick={() =>
+                                pushGtmEvent(
+                                  "portfolio_project_cta_click",
+                                  {
+                                    ctaType: "github_profile",
+                                    projectSlug: slug ?? null,
+                                    isFeatured: false,
+                                  }
+                                )
+                              }
                             >
                               <Github className="mr-1.5 size-3.5" />
                               {t("githubProfile")}
@@ -405,6 +490,13 @@ export function ProjectsSection() {
                               href={`mailto:${profile.email}?subject=${encodeURIComponent(
                                 `Request case study: ${project.title}`
                               )}`}
+                              onClick={() =>
+                                pushGtmEvent("portfolio_project_cta_click", {
+                                  ctaType: "request_case_study",
+                                  projectSlug: slug ?? null,
+                                  isFeatured: false,
+                                })
+                              }
                             >
                               <ExternalLink className="mr-1.5 size-3.5" />
                               {t("requestCaseStudy")}

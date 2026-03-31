@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Moon, Sun, Menu } from "lucide-react"
 import { useTheme } from "next-themes"
 import { usePathname } from "next/navigation"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useTranslations } from "@/shared/context/I18nContext"
 import { Button } from "@/components/ui/button"
 import { Container } from "./Container"
@@ -66,6 +66,41 @@ export function AppHeader() {
     }
   }, [])
 
+  const pushGtmEvent = (
+    eventName: string,
+    payload: Record<string, unknown>
+  ) => {
+    try {
+      const w = window as unknown as { dataLayer?: unknown[] }
+      w.dataLayer = w.dataLayer ?? []
+      w.dataLayer.push({ event: eventName, ...payload })
+    } catch {
+      // Never break UX
+    }
+  }
+
+  const lastSectionRef = useRef<(typeof sectionIds)[number]>("home")
+  const sectionEnterTimeRef = useRef<number>(Date.now())
+
+  // Analytics: push dwell + navigation clicks to GTM.
+  useEffect(() => {
+    const now = Date.now()
+    const fromSection = lastSectionRef.current
+    const toSection = activeSectionId
+    const ms = now - sectionEnterTimeRef.current
+
+    if (fromSection !== toSection && ms > 500) {
+      pushGtmEvent("portfolio_section_dwell", {
+        fromSection,
+        toSection,
+        ms,
+      })
+    }
+
+    lastSectionRef.current = toSection
+    sectionEnterTimeRef.current = now
+  }, [activeSectionId])
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <Container className="flex h-16 items-center justify-between">
@@ -91,6 +126,12 @@ export function AppHeader() {
           <div className="hidden md:flex items-center gap-4 text-sm">
             <a
               href="#home"
+              onClick={() =>
+                pushGtmEvent("portfolio_nav_click", {
+                  toSection: "home",
+                  fromSection: activeSectionId,
+                })
+              }
               aria-current={activeSectionId === "home" ? "page" : undefined}
               className={
                 activeSectionId === "home"
@@ -102,6 +143,12 @@ export function AppHeader() {
             </a>
             <a
               href="#impact"
+              onClick={() =>
+                pushGtmEvent("portfolio_nav_click", {
+                  toSection: "impact",
+                  fromSection: activeSectionId,
+                })
+              }
               aria-current={activeSectionId === "impact" ? "page" : undefined}
               className={
                 activeSectionId === "impact"
@@ -113,6 +160,12 @@ export function AppHeader() {
             </a>
             <a
               href="#experience"
+              onClick={() =>
+                pushGtmEvent("portfolio_nav_click", {
+                  toSection: "experience",
+                  fromSection: activeSectionId,
+                })
+              }
               aria-current={
                 activeSectionId === "experience" ? "page" : undefined
               }
@@ -126,6 +179,12 @@ export function AppHeader() {
             </a>
             <a
               href="#projects"
+              onClick={() =>
+                pushGtmEvent("portfolio_nav_click", {
+                  toSection: "projects",
+                  fromSection: activeSectionId,
+                })
+              }
               aria-current={activeSectionId === "projects" ? "page" : undefined}
               className={
                 activeSectionId === "projects"
@@ -137,6 +196,12 @@ export function AppHeader() {
             </a>
             <a
               href="#about"
+              onClick={() =>
+                pushGtmEvent("portfolio_nav_click", {
+                  toSection: "about",
+                  fromSection: activeSectionId,
+                })
+              }
               aria-current={activeSectionId === "about" ? "page" : undefined}
               className={
                 activeSectionId === "about"
@@ -148,6 +213,12 @@ export function AppHeader() {
             </a>
             <a
               href="#skills"
+              onClick={() =>
+                pushGtmEvent("portfolio_nav_click", {
+                  toSection: "skills",
+                  fromSection: activeSectionId,
+                })
+              }
               aria-current={activeSectionId === "skills" ? "page" : undefined}
               className={
                 activeSectionId === "skills"
@@ -159,6 +230,12 @@ export function AppHeader() {
             </a>
             <a
               href="#contact"
+              onClick={() =>
+                pushGtmEvent("portfolio_nav_click", {
+                  toSection: "contact",
+                  fromSection: activeSectionId,
+                })
+              }
               aria-current={activeSectionId === "contact" ? "page" : undefined}
               className={
                 activeSectionId === "contact"
@@ -182,6 +259,12 @@ export function AppHeader() {
                 <nav className="flex flex-col gap-1 text-sm">
                   <a
                     href="#home"
+                    onClick={() =>
+                      pushGtmEvent("portfolio_nav_click", {
+                        toSection: "home",
+                        fromSection: activeSectionId,
+                      })
+                    }
                     aria-current={activeSectionId === "home" ? "page" : undefined}
                     className={
                       activeSectionId === "home"
@@ -193,6 +276,12 @@ export function AppHeader() {
                   </a>
                   <a
                     href="#impact"
+                    onClick={() =>
+                      pushGtmEvent("portfolio_nav_click", {
+                        toSection: "impact",
+                        fromSection: activeSectionId,
+                      })
+                    }
                     aria-current={
                       activeSectionId === "impact" ? "page" : undefined
                     }
@@ -206,6 +295,12 @@ export function AppHeader() {
                   </a>
                   <a
                     href="#experience"
+                    onClick={() =>
+                      pushGtmEvent("portfolio_nav_click", {
+                        toSection: "experience",
+                        fromSection: activeSectionId,
+                      })
+                    }
                     aria-current={
                       activeSectionId === "experience" ? "page" : undefined
                     }
@@ -219,6 +314,12 @@ export function AppHeader() {
                   </a>
                   <a
                     href="#projects"
+                    onClick={() =>
+                      pushGtmEvent("portfolio_nav_click", {
+                        toSection: "projects",
+                        fromSection: activeSectionId,
+                      })
+                    }
                     aria-current={
                       activeSectionId === "projects" ? "page" : undefined
                     }
@@ -232,6 +333,12 @@ export function AppHeader() {
                   </a>
                   <a
                     href="#about"
+                    onClick={() =>
+                      pushGtmEvent("portfolio_nav_click", {
+                        toSection: "about",
+                        fromSection: activeSectionId,
+                      })
+                    }
                     aria-current={
                       activeSectionId === "about" ? "page" : undefined
                     }
@@ -245,6 +352,12 @@ export function AppHeader() {
                   </a>
                   <a
                     href="#skills"
+                    onClick={() =>
+                      pushGtmEvent("portfolio_nav_click", {
+                        toSection: "skills",
+                        fromSection: activeSectionId,
+                      })
+                    }
                     aria-current={
                       activeSectionId === "skills" ? "page" : undefined
                     }
@@ -258,6 +371,12 @@ export function AppHeader() {
                   </a>
                   <a
                     href="#contact"
+                    onClick={() =>
+                      pushGtmEvent("portfolio_nav_click", {
+                        toSection: "contact",
+                        fromSection: activeSectionId,
+                      })
+                    }
                     aria-current={
                       activeSectionId === "contact" ? "page" : undefined
                     }

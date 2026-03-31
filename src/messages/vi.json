@@ -73,6 +73,10 @@
     "problem": "Vấn đề",
     "solution": "Giải pháp",
     "impact": "Tác động",
+    "businessGoal": "Mục tiêu kinh doanh",
+    "constraints": "Ràng buộc",
+    "decision": "Quyết định",
+    "outcome": "Kết quả",
     "vela-logistics": {
       "problem": "Cần nền tảng logistics đa cổng, mở rộng cho nội bộ và bên ngoài, triển khai độc lập và tách biệt theo tenant.",
       "solution": "Thiết kế Micro Frontend (Nx, host + remotes) cho Core, Customer, Supplier; cấu hình đa tenant; CI/CD với Docker và Kubernetes.",
