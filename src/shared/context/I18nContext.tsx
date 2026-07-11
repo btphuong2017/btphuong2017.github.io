@@ -39,9 +39,15 @@ export function I18nProvider({
 }) {
   const value = useMemo(() => ({ locale, messages }), [locale, messages])
   // Keep <html lang> in sync with the active locale (static export renders a
-  // single root <html lang="en">; correct it per route for screen readers).
+  // single root <html lang="en">; correct it per route for screen readers), and
+  // persist the locale so the 404/root redirect can restore the visitor's language.
   useEffect(() => {
     document.documentElement.lang = locale
+    try {
+      localStorage.setItem("locale", locale)
+    } catch {
+      // ignore (private mode / storage disabled)
+    }
   }, [locale])
   return (
     <I18nContext.Provider value={value}>{children}</I18nContext.Provider>

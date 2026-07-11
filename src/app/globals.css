@@ -142,7 +142,10 @@ a { color: inherit; }
 @media (max-width: 640px) { .nav-links { display: none; } }
 
 /* ---------- hero ---------- */
-.hero { padding: 84px 0 64px; }
+/* Only vertical padding here — horizontal padding comes from .wrap (0 28px).
+   Using `padding` shorthand would override .wrap's sides to 0 (both classes are
+   on the same element), leaving the hero edge-to-edge on mobile. */
+.hero { padding-top: 84px; padding-bottom: 64px; }
 .eyebrow { font-family: var(--mono); font-weight: 600; font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
 h1 { font-size: clamp(42px, 7vw, 74px); font-weight: 700; line-height: 1.04; letter-spacing: -0.022em; color: var(--ink); margin: 14px 0 20px; }
 .lede { font-size: clamp(17px, 2vw, 20px); max-width: 34em; color: var(--text); }
