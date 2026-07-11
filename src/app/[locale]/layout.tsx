@@ -9,12 +9,12 @@ import { AppFooter } from "@/shared/components/AppFooter"
 import { site } from "@/core/config/site"
 
 const titles: Record<string, string> = {
-  en: "Phuong Bui Thanh — Frontend Architect & Team Lead",
-  vi: "Phuong Bui Thanh — Kiến trúc sư Frontend & Trưởng nhóm",
+  en: "Phuong Bui Thanh — Senior Frontend Engineer & Team Lead",
+  vi: "Phuong Bui Thanh — Senior Frontend Engineer & Team Lead",
 }
 const descriptions: Record<string, string> = {
-  en: "Architect of Micro Frontend systems. 8+ years building high-performance web applications with Angular and React/Next.js. Led 8 frontend developers in a 60-person organization.",
-  vi: "Thiết kế hệ thống Micro Frontend. Hơn 8 năm xây dựng ứng dụng web hiệu năng cao với Angular và React/Next.js. Dẫn dắt 8 lập trình viên frontend trong tổ chức 60 người.",
+  en: "Senior Frontend Engineer & Team Lead. Eight years building enterprise web platforms with React/Next.js and Angular — I design frontend architecture, keep it fast, and lead the team that ships it.",
+  vi: "Senior Frontend Engineer & Team Lead. 8 năm xây dựng các nền tảng web doanh nghiệp với React/Next.js và Angular — thiết kế kiến trúc frontend, giữ cho nó nhanh, và dẫn dắt đội ngũ đưa nó ra sản phẩm.",
 }
 
 export async function generateMetadata({
@@ -26,6 +26,12 @@ export async function generateMetadata({
   const title = titles[locale] ?? titles.en
   const description = descriptions[locale] ?? descriptions.en
   const url = `${site.url}/${locale}`
+  const ogImage = {
+    url: "/og-image.png",
+    width: 1200,
+    height: 630,
+    alt: title,
+  }
   return {
     title,
     description,
@@ -35,6 +41,14 @@ export async function generateMetadata({
       url,
       siteName: site.name,
       locale: locale === "vi" ? "vi_VN" : "en_US",
+      type: "website",
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/og-image.png"],
     },
   }
 }

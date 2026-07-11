@@ -4,6 +4,7 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   type ReactNode,
 } from "react"
@@ -37,6 +38,11 @@ export function I18nProvider({
   children: ReactNode
 }) {
   const value = useMemo(() => ({ locale, messages }), [locale, messages])
+  // Keep <html lang> in sync with the active locale (static export renders a
+  // single root <html lang="en">; correct it per route for screen readers).
+  useEffect(() => {
+    document.documentElement.lang = locale
+  }, [locale])
   return (
     <I18nContext.Provider value={value}>{children}</I18nContext.Provider>
   )
@@ -60,4 +66,25 @@ export function useTranslations(namespace: string) {
     [ns]
   )
   return t
+}
+
+export function useLocale(): string {
+  const ctx = useContext(I18nContext)
+  if (!ctx) {
+    throw new Error("useLocale must be used within I18nProvider")
+  }
+  return ctx.locale
+}
+
+/**
+ * Returns the raw (array/object/string) value at `namespace` in the current
+ * locale's messages — used for structured content (work rows, metric cells,
+ * skill lines, platform-map cells). Returns undefined if the path is missing.
+ */
+export function useMessages<T = unknown>(namespace: string): T | undefined {
+  const ctx = useContext(I18nContext)
+  if (!ctx) {
+    throw new Error("useMessages must be used within I18nProvider")
+  }
+  return getNested(ctx.messages, namespace) as T | undefined
 }

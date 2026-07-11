@@ -1,131 +1,160 @@
 {
-  "hero": {
-    "pillTitle": "Kiến trúc sư Frontend & Trưởng nhóm",
-    "summary": "Kiến trúc và dẫn dắt frontend cho chương trình logistics 60+ người với 3 cổng sản phẩm. Xây dựng Micro Frontend bằng Nx (host + remotes), chuẩn hóa delivery với CI/CD Docker/Kubernetes. Hơn 8 năm kinh nghiệm với Angular và React/Next.js, tập trung hiệu năng, khả năng mở rộng và tốc độ ship.",
-    "greeting": "Xin chào, tôi là",
-    "cta": "Liên hệ",
-    "viewProjects": "Xem dự án",
-    "downloadCv": "Tải CV",
-    "stats": {
-      "years": "Năm kinh nghiệm",
-      "teams": "Đội đã dẫn dắt",
-      "shipped": "Sản phẩm & sáng kiến đã triển khai"
-    },
-    "avatarAlt": "Chân dung Phuong Bui Thanh"
-  },
   "nav": {
-    "home": "Trang chủ",
-    "impact": "Tác động",
-    "experience": "Kinh nghiệm",
-    "projects": "Dự án",
-    "about": "Giới thiệu",
-    "skills": "Kỹ năng",
-    "contact": "Liên hệ",
-    "portfolio": "Portfolio",
-    "themeToggle": "Đổi giao diện sáng / tối"
+    "mark": "btphuong.dev",
+    "work": "Work",
+    "experience": "Experience",
+    "skills": "Skills",
+    "contact": "Contact",
+    "localeSwitch": "Ngôn ngữ"
   },
-  "impact": {
-    "label": "Tác động",
-    "title": "Quy mô và trách nhiệm",
-    "description": "Các chỉ số cụ thể từ công việc kiến trúc và lãnh đạo.",
-    "yearsLabel": "Năm kinh nghiệm",
-    "yearsDesc": "Phát triển frontend và dẫn dắt đội ngũ",
-    "teamsLabel": "Lập trình viên đã dẫn dắt",
-    "teamsDesc": "Đội frontend tại VELA Logistics",
-    "architectureLabel": "Micro Frontend",
-    "architectureDesc": "Nx Monorepo, host + remotes",
-    "scaleLabel": "Cổng",
-    "scaleDesc": "Core, Customer, Supplier",
-    "domainLabel": "Sản phẩm đã triển khai",
-    "domainDesc": "Doanh nghiệp và hướng người dùng"
-  },
-  "footer": {
-    "navigation": "Điều hướng",
-    "contact": "Liên hệ",
-    "home": "Trang chủ",
-    "impact": "Tác động",
-    "experience": "Kinh nghiệm",
-    "projects": "Dự án",
-    "about": "Giới thiệu",
-    "skills": "Kỹ năng",
-    "copyright": "Bảo lưu mọi quyền.",
-    "aria": {
-      "github": "Mở GitHub",
-      "linkedin": "Mở LinkedIn",
-      "email": "Gửi email"
+  "hero": {
+    "eyebrow": "Senior Frontend Engineer & Team Lead",
+    "name": "Phuong Bui Thanh",
+    "lede": "8 năm xây dựng các nền tảng web doanh nghiệp với **React/Next.js** và **Angular**. Tôi thiết kế kiến trúc frontend, giữ cho nó nhanh, và dẫn dắt đội ngũ đưa nó ra sản phẩm.",
+    "viewWork": "Xem dự án",
+    "downloadCv": "Tải CV",
+    "meta": ["TP. Hồ Chí Minh", "8 năm kinh nghiệm", "dẫn dắt team 8 người"],
+    "platformMap": {
+      "title": "VELA · Kiến trúc frontend tôi thiết kế",
+      "src": "3 repository · tất cả multi-tenant",
+      "cells": [
+        {
+          "name": "core-portal",
+          "kind": "React / Next.js · single app",
+          "desc": "vận hành nội bộ",
+          "tag": "multi-tenant"
+        },
+        {
+          "name": "customer-portal",
+          "kind": "Angular · Nx monorepo · MFE",
+          "desc": "host + remotes",
+          "tag": "multi-tenant"
+        },
+        {
+          "name": "supplier-portal",
+          "kind": "Angular · Nx monorepo · MFE",
+          "desc": "host + remotes",
+          "tag": "multi-tenant"
+        }
+      ],
+      "note": "Mỗi portal dùng đúng stack và kiến trúc mà nhu cầu vận hành của nó đòi hỏi — Core Portal React/Next.js do một team sở hữu trọn vẹn; Customer và Supplier là các nền tảng Micro Frontend Angular độc lập, cho phép các team deploy song song."
     }
+  },
+  "metrics": {
+    "items": [
+      { "num": "8", "label": "năm làm frontend" },
+      { "num": "8", "label": "developer đã dẫn dắt" },
+      { "num": "3", "label": "portal đã kiến trúc" },
+      { "num": "−75%", "label": "initial bundle", "accent": true }
+    ]
+  },
+  "work": {
+    "title": "Dự án tiêu biểu",
+    "tag": "Vấn đề → Quyết định → Kết quả",
+    "labels": {
+      "problem": "Vấn đề",
+      "decision": "Quyết định",
+      "outcome": "Kết quả",
+      "role": "Vai trò",
+      "tech": "Tech"
+    },
+    "rows": [
+      {
+        "name": "VELA Logistics Platform",
+        "meta": "Frontend Team Leader · Jul 2023 – Mar 2026",
+        "problem": "Nền tảng logistics multi-tenant cho người dùng nội bộ và bên ngoài — ba portal, một chương trình 60 người, các team cần ship song song mà không giẫm chân nhau.",
+        "decision": "Ba repository, tất cả multi-tenant: Core Portal **React/Next.js** dạng ứng dụng đơn, và các nền tảng **Micro Frontend Angular trên Nx Monorepo** riêng biệt (host + remotes) cho Customer và Supplier. Quality gate Jasmine + SonarQube trong pipeline CI/CD Docker/Kubernetes.",
+        "outcome": "Deploy độc lập và phát triển song song giữa các team; initial bundle của Core Portal giảm từ **12 MB xuống 3 MB** (webpack-bundle-analyzer); dẫn dắt team 8 người xây dựng và vận hành.",
+        "role": "Kiến trúc, chuẩn engineering, quy trình code review, chiến lược GitFlow — đồng thời trực tiếp code trên cả React/Next.js và Angular, bao gồm phần tối ưu hiệu năng Core Portal.",
+        "arch": "**vela frontend** · 3 repos · all multi-tenant\n├── core-portal        **React/Next.js · single app**   — internal operations\n├── customer-portal    **Angular · Nx monorepo · MFE**  — host + remotes\n└── supplier-portal    **Angular · Nx monorepo · MFE**  — host + remotes",
+        "tech": "React · Next.js · Angular · TypeScript · Redux Toolkit · TanStack Query · RxJS · Nx · Module Federation · Docker · Kubernetes · Jasmine · SonarQube"
+      },
+      {
+        "name": "SOGUS — Examination Platform",
+        "meta": "Frontend Team Leader · Nov 2022 – Jul 2023",
+        "problem": "Sàng lọc ứng viên với nhiều hình thức đánh giá — và hai nhóm người dùng rất khác nhau: quản trị viên nội bộ và ứng viên làm bài thi.",
+        "decision": "Hai ứng dụng riêng biệt: **Angular** cho portal quản trị nội bộ, **React/Next.js** cho landing, phỏng vấn và luồng làm bài phía ứng viên.",
+        "outcome": "Vòng đời bài thi thống nhất trên cả hai ứng dụng, giao bởi project team 10 người với frontend workstream do tôi dẫn dắt.",
+        "role": "Kiến trúc frontend trên cả hai stack, lập kế hoạch task, review PR, làm việc với stakeholder.",
+        "tech": "Angular · React · Next.js · TypeScript · Java · PostgreSQL"
+      },
+      {
+        "name": "Medbuy — Pharmaceutical E-commerce",
+        "meta": "Senior Frontend Developer · Dec 2022 – Jul 2023",
+        "problem": "Sàn thương mại điện tử kết nối nhà cung cấp dược phẩm, đại lý và người dùng cuối — UX responsive với tích hợp backend ổn định.",
+        "decision": "Frontend React/Next.js xây dựng sát cùng đội UX/UI; thống nhất REST API contract với team backend NestJS.",
+        "outcome": "Giao diện responsive, đúng thiết kế, chạy production với deployment container hóa.",
+        "role": "Triển khai frontend và tích hợp API trong project team 10 người.",
+        "tech": "React · Next.js · NestJS · TypeScript · Docker"
+      },
+      {
+        "name": "Kensa Order System",
+        "meta": "Fullstack Developer · Mar 2021 – Jul 2021",
+        "problem": "Quản lý đơn hàng và doanh thu với Admin và Customer portal, kèm thanh toán trực tuyến.",
+        "decision": "Xây end-to-end trong team 2 người: frontend React, REST API Laravel, tích hợp thanh toán VNPay và Payoo, deploy Docker trên Linux.",
+        "outcome": "Luồng xử lý đơn, báo cáo và thanh toán chạy production.",
+        "role": "Toàn bộ từ frontend đến backend — dự án dạy tôi cái giá của full ownership.",
+        "tech": "React · Laravel · MySQL · Docker"
+      }
+    ]
   },
   "experience": {
-    "label": "Kinh nghiệm",
-    "title": "Hành trình nghề nghiệp",
-    "description": "Hơn 8 năm xây dựng đội ngũ, triển khai sản phẩm và định hình kiến trúc frontend."
-  },
-  "projects": {
-    "label": "Case study",
-    "title": "Công việc phản ánh cách tôi xây dựng",
-    "description": "Vấn đề, giải pháp và tác động trong các team doanh nghiệp và sản phẩm.",
-    "tech": "Công nghệ",
-    "code": "Mã nguồn",
-    "live": "Demo",
-    "featuredLabel": "Case study nổi bật",
-    "githubProfile": "GitHub cá nhân",
-    "requestCaseStudy": "Yêu cầu case study",
-    "problem": "Vấn đề",
-    "solution": "Giải pháp",
-    "impact": "Tác động",
-    "businessGoal": "Mục tiêu kinh doanh",
-    "constraints": "Ràng buộc",
-    "decision": "Quyết định",
-    "outcome": "Kết quả",
-    "vela-logistics": {
-      "problem": "Cần nền tảng logistics đa cổng, mở rộng cho nội bộ và bên ngoài, triển khai độc lập và tách biệt theo tenant.",
-      "solution": "Thiết kế Micro Frontend (Nx, host + remotes) cho Core, Customer, Supplier; cấu hình đa tenant; CI/CD với Docker và Kubernetes.",
-      "impact": "Chương trình 60+ người; 3 cổng; phát triển song song và phát hành ổn định."
-    },
-    "sogus": {
-      "problem": "Nền tảng thi trực tuyến cần định dạng đề linh hoạt và frontend mở rộng cho team 10 người.",
-      "solution": "Dẫn dắt thiết kế frontend với Angular và React/Next.js; xây dựng luồng tạo đề, gán bài thi, chấm kết quả.",
-      "impact": "Vòng đời thi thống nhất; hợp tác với stakeholder về yêu cầu và giải pháp kỹ thuật."
-    },
-    "medbuy": {
-      "problem": "Thương mại điện tử chuỗi cung ứng dược với UX responsive và tích hợp backend ổn định.",
-      "solution": "Phát triển UI responsive bằng React và Next.js; tích hợp API; triển khai container với Docker.",
-      "impact": "Cải thiện trải nghiệm và bám sát thiết kế UX/UI; sẵn sàng production."
-    },
-    "kensa-order": {
-      "problem": "Quản lý đơn hàng và doanh thu với cổng Admin và Customer và tích hợp thanh toán.",
-      "solution": "Hệ thống đơn hàng fullstack với REST API Laravel; tích hợp VNPay, Payoo; triển khai Linux với Docker.",
-      "impact": "Xử lý đơn và báo cáo end-to-end; luồng thanh toán trực tuyến."
-    },
-    "kilu": {
-      "problem": "Marketplace xe máy cũ với đăng tin, tìm kiếm và giao dịch.",
-      "solution": "Tính năng WordPress tùy biến, tùy chỉnh theme và plugin; tối ưu hiệu năng và SEO.",
-      "impact": "Trang quan trọng xếp hạng; hỗ trợ luồng marketplace."
-    }
-  },
-  "about": {
-    "label": "Giới thiệu",
-    "title": "Ưu tiên kiến trúc, ưu tiên đội ngũ",
-    "description": "Tôi tập trung vào 3 mục tiêu: kiến trúc mở rộng được, đội ngũ ship ổn định và tác động đo lường được. Tại VELA, tôi định nghĩa chiến lược Micro Frontend (Nx, 1 host + nhiều remotes), xây CI/CD với Docker/Kubernetes và dẫn dắt 8 frontend developers trong chương trình 60+ người. Cách làm của tôi ưu tiên ownership rõ ràng, component tái sử dụng, hiệu năng và khả năng vận hành để nhiều cổng/tenant phát triển song song mà vẫn giữ chất lượng."
+    "title": "Kinh nghiệm",
+    "tag": "2017 → 2026",
+    "items": [
+      {
+        "role": "Frontend Team Leader",
+        "org": "Indo Trans Logistics — Ho Chi Minh City",
+        "dates": "Jul 2023 – Mar 2026",
+        "desc": "Dẫn dắt 8 lập trình viên frontend trên nền tảng logistics VELA. Sở hữu kiến trúc, chuẩn engineering và quy trình release trên 4 repository — luôn trực tiếp tham gia."
+      },
+      {
+        "role": "Senior Frontend Developer",
+        "org": "AMIT Group Joint Stock Company — Ho Chi Minh City",
+        "dates": "Dec 2021 – Jul 2023",
+        "desc": "Dẫn dắt các team frontend nhỏ (3–5 lập trình viên) trên nhiều dự án khách hàng song song. Ước lượng, phân tích kỹ thuật và trao đổi trực tiếp với khách hàng bên cạnh việc phát triển."
+      },
+      {
+        "role": "Frontend Developer",
+        "org": "AMIT Group Joint Stock Company — Ho Chi Minh City",
+        "dates": "Jun 2018 – Dec 2021",
+        "desc": "Xây dựng các ứng dụng web responsive với Angular, React và WordPress; tính năng fullstack với Laravel và MySQL. Bắt đầu là thực tập sinh (Jun–Dec 2017), quay lại làm full-time sau khi tốt nghiệp."
+      }
+    ]
   },
   "skills": {
-    "label": "Kỹ năng",
-    "title": "Bộ công cụ cho team sản phẩm hiện đại",
-    "description": "Bao phủ toàn stack, tập trung vào frontend chất lượng cao, design system và hợp tác.",
-    "skillCount": "kỹ năng",
-    "groups": {
-      "architecture": "Kiến trúc",
-      "frameworks": "Frameworks",
-      "devops": "DevOps",
-      "performance": "Hiệu năng",
-      "backend": "Tích hợp Backend"
-    }
+    "title": "Kỹ năng",
+    "tag": "những gì tôi sẵn sàng bảo vệ khi phỏng vấn",
+    "lines": [
+      {
+        "k": "Frontend",
+        "v": "**React, Next.js, Angular (Signals, Standalone Components), TypeScript, RxJS** — Redux Toolkit, TanStack Query, Reactive Forms, Tailwind, Angular Material, Ant Design"
+      },
+      {
+        "k": "Kiến trúc & Delivery",
+        "v": "**Nx Monorepo, Micro Frontend, Module Federation** — Docker, Kubernetes, GitLab CI, SonarQube, Jasmine, Jest, Cypress, AWS (EC2, S3, CloudFront, Route 53, IAM)"
+      },
+      {
+        "k": "Khác",
+        "v": "Node.js (NestJS, Express), PHP (Laravel), REST API, GraphQL — và workflow AI-assisted hằng ngày với Cursor và Claude Code"
+      }
+    ]
   },
   "contact": {
-    "label": "Liên hệ",
-    "title": "Cùng hợp tác",
-    "description": "Sẵn sàng cho vai trò Frontend Architect/Team Lead. Ưu tiên các bài toán scale, kiến trúc sản phẩm và nâng năng lực đội ngũ.",
-    "cta": "Liên hệ",
-    "downloadCv": "Tải CV"
+    "title": "Liên hệ",
+    "tag": "sẵn sàng cho vị trí senior frontend & lead",
+    "headlinePre": "Bạn đang xây thứ gì đó mà scale, hiệu năng và chất lượng đội ngũ thực sự quan trọng? ",
+    "email": "btphuong2017@gmail.com",
+    "phone": "+84 964 747 781",
+    "location": "TP. Hồ Chí Minh, Việt Nam",
+    "linkedinUrl": "https://www.linkedin.com/in/phuong-bui-thanh-3035a0227/",
+    "links": {
+      "email": "Email",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 Bùi Thanh Phương",
+    "note": "Plex Sans/Mono · cùng hệ thiết kế với bản CV bạn vừa tải"
   }
 }
