@@ -1,28 +1,21 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 
-import { ThemeProvider } from "@/shared/components/ThemeProvider"
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-})
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-})
+import { site } from "@/core/config/site"
 
 export const metadata: Metadata = {
-  title: "Phuong Bui Thanh — Portfolio",
-  description:
-    "Frontend Architect & Team Lead – Micro Frontend (Nx), multi-tenant logistics, Angular & React/Next.js.",
+  title: site.title,
+  description: site.description,
+  metadataBase: new URL(site.url),
+  // Icons are served as static files from public/ and declared here as plain
+  // <link> tags. (The src/app icon.* file conventions trip a Turbopack build
+  // panic in Next 16.1.6, so we avoid them.)
   icons: {
     icon: [
-      { url: "/favicon_light.png", media: "(prefers-color-scheme: light)" },
-      { url: "/favicon_dark.png", media: "(prefers-color-scheme: dark)" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon.png", type: "image/png", sizes: "48x48" },
     ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
   },
 }
 
@@ -32,10 +25,31 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en">
+      <head>
+        <link
+          rel="preload"
+          href="/fonts/ibm-plex-sans-latin-400-normal.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/ibm-plex-sans-latin-700-normal.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/ibm-plex-mono-latin-400-normal.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body className="antialiased">
         {/* Google Tag Manager (GTM) */}
         <script
           dangerouslySetInnerHTML={{
@@ -54,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        <ThemeProvider>{children}</ThemeProvider>
+        {children}
       </body>
     </html>
   )

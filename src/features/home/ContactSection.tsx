@@ -1,54 +1,35 @@
 "use client"
 
-import { Mail, FileDown } from "lucide-react"
 import { useTranslations } from "@/shared/context/I18nContext"
-import { Section } from "@/shared/components/Section"
-import { Container } from "@/shared/components/Container"
-import { Button } from "@/components/ui/button"
-import profile from "@/data/profile.json"
-
-const CV_PATH = "/CV - Phuong Bui Thanh.pdf"
+import { Reveal } from "@/shared/components/Reveal"
 
 export function ContactSection() {
   const t = useTranslations("contact")
+  const email = t("email")
+  const phone = t("phone")
+  const telHref = `tel:${phone.replace(/\s+/g, "")}`
 
   return (
-    <Section id="contact">
-      <Container>
-        <div className="mx-auto max-w-2xl space-y-8 text-center">
-          <div className="space-y-3">
-            <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl md:text-4xl">
-              {t("title")}
-            </h2>
-            <p className="text-sm text-muted-foreground sm:text-base">
-              {t("description")}
-            </p>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button size="lg" asChild>
-              <a
-                href={`mailto:${profile.email}`}
-                className="inline-flex items-center gap-2"
-              >
-                <Mail className="size-4" />
-                <span>{t("cta")}</span>
-              </a>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <a
-                href={CV_PATH}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2"
-              >
-                <FileDown className="size-4" />
-                <span>{t("downloadCv")}</span>
-              </a>
-            </Button>
-          </div>
+    <section id="contact">
+      <div className="wrap contact-box">
+        <div className="sec-head">
+          <h2>{t("title")}</h2>
+          <span className="sec-tag">{t("tag")}</span>
         </div>
-      </Container>
-    </Section>
+        <Reveal as="p" className="big">
+          {t("headlinePre")}
+          <a href={`mailto:${email}`}>{email}</a>
+        </Reveal>
+        <Reveal className="contact-links">
+          <a href={`mailto:${email}`}>{t("links.email")}</a>
+          <a href={t("linkedinUrl")} target="_blank" rel="noopener">
+            {t("links.linkedin")}
+          </a>
+          <a href={telHref}>{phone}</a>
+          <span style={{ color: "var(--muted)" }}>{t("location")}</span>
+        </Reveal>
+      </div>
+    </section>
   )
 }
 

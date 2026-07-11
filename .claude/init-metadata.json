@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-11",
+  "mode": "A",
+  "tier": "cost-optimized",
+  "docsLanguage": "en",
+  "stack": {
+    "framework": "Next.js 16 (App Router, static export)",
+    "ui": "React 19, Tailwind CSS 4, shadcn/ui, Radix, Lucide",
+    "i18n": "next-intl (en, vi; default vi)",
+    "theming": "next-themes",
+    "language": "TypeScript 5",
+    "deploy": "GitHub Pages (.github/workflows/nextjs.yml)"
+  },
+  "files": [
+    {
+      "path": "CLAUDE.md",
+      "sha256": "377d9b3f13e423a70a1e640d15de26a8c1ce8ce08a2e901a0128c500b3a63004"
+    },
+    {
+      "path": ".claude/docs/knowledge-map.md",
+      "sha256": "143bdb0e5fd0b03a53717809078225edde831a42a1ddd7a80c55dd35df6c8a47"
+    },
+    {
+      "path": ".claude/docs/development-workflow.md",
+      "sha256": "4a45d62882ef80159ab487b88f0a0ea3db2574c5efe69ccf601c5b22f817201f"
+    },
+    {
+      "path": ".claude/docs/rules.md",
+      "sha256": "1d7d1f12c0648615d85b1c0c83bf77cb02ddb4e0d9fdc2fb55b12af688a7f215"
+    },
+    {
+      "path": ".claude/docs/open-questions.md",
+      "sha256": "3b9a41445df75c4d61ea38b984da02d6f696d8782656f2915545402498924e83"
+    }
+  ]
+}
