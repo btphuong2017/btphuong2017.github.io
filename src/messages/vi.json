@@ -20,7 +20,7 @@
       "cells": [
         {
           "name": "core-portal",
-          "kind": "React / Next.js · single app",
+          "kind": "Angular · single app",
           "desc": "vận hành nội bộ",
           "tag": "multi-tenant"
         },
@@ -37,7 +37,7 @@
           "tag": "multi-tenant"
         }
       ],
-      "note": "Mỗi portal dùng đúng stack và kiến trúc mà nhu cầu vận hành của nó đòi hỏi — Core Portal React/Next.js do một team sở hữu trọn vẹn; Customer và Supplier là các nền tảng Micro Frontend Angular độc lập, cho phép các team deploy song song."
+      "note": "Mỗi portal dùng đúng kiến trúc mà nhu cầu vận hành của nó đòi hỏi — Core Portal Angular dạng single-application do một team sở hữu trọn vẹn; Customer và Supplier là các nền tảng Micro Frontend Angular trên Nx độc lập, cho phép các team deploy song song."
     }
   },
   "metrics": {
@@ -63,11 +63,11 @@
         "name": "VELA Logistics Platform",
         "meta": "Indo Trans Logistics · Frontend Team Leader · Jul 2023 – Mar 2026",
         "problem": "Nền tảng logistics multi-tenant cho người dùng nội bộ và bên ngoài — ba portal, một chương trình 60 người, các team cần ship song song mà không giẫm chân nhau.",
-        "decision": "Ba repository, tất cả multi-tenant: Core Portal **React/Next.js** dạng ứng dụng đơn, và các nền tảng **Micro Frontend Angular trên Nx Monorepo** riêng biệt (host + remotes) cho Customer và Supplier. Quality gate Jasmine + SonarQube trong pipeline CI/CD Docker/Kubernetes.",
+        "decision": "Ba repository, tất cả multi-tenant: **Core Portal Angular dạng single-application**, và các nền tảng **Micro Frontend Angular trên Nx Monorepo** riêng biệt (host + remotes) cho Customer và Supplier. Quality gate Jasmine + SonarQube trong pipeline CI/CD Docker/Kubernetes.",
         "outcome": "Deploy độc lập và phát triển song song giữa các team; initial bundle của Core Portal giảm từ **12 MB xuống 3 MB** (webpack-bundle-analyzer); dẫn dắt team 8 người xây dựng và vận hành.",
-        "role": "Kiến trúc, chuẩn engineering, quy trình code review, chiến lược GitFlow — đồng thời trực tiếp code trên cả React/Next.js và Angular, bao gồm phần tối ưu hiệu năng Core Portal.",
-        "arch": "**vela frontend** · 3 repos · all multi-tenant\n├── core-portal        **React/Next.js · single app**   — internal operations\n├── customer-portal    **Angular · Nx monorepo · MFE**  — host + remotes\n└── supplier-portal    **Angular · Nx monorepo · MFE**  — host + remotes",
-        "tech": "React · Next.js · Angular · TypeScript · Redux Toolkit · TanStack Query · RxJS · Nx · Module Federation · Docker · Kubernetes · Jasmine · SonarQube"
+        "role": "Kiến trúc, chuẩn engineering, quy trình code review, chiến lược GitFlow — đồng thời trực tiếp code trên toàn bộ stack Angular, bao gồm phần tối ưu hiệu năng Core Portal.",
+        "arch": "**vela frontend** · 3 repos · all multi-tenant\n├── core-portal        **Angular · single app**          — internal operations\n├── customer-portal    **Angular · Nx monorepo · MFE**  — host + remotes\n└── supplier-portal    **Angular · Nx monorepo · MFE**  — host + remotes",
+        "tech": "Angular · TypeScript · RxJS · Nx · Module Federation · Docker · Kubernetes · .NET · Jasmine · SonarQube"
       },
       {
         "name": "SOGUS — Examination Platform",
@@ -106,7 +106,7 @@
         "role": "Frontend Team Leader (hands-on)",
         "org": "Indo Trans Logistics — Ho Chi Minh City",
         "dates": "Jul 2023 – Mar 2026",
-        "desc": "Kiến trúc frontend cho nền tảng VELA của Indo Trans Logistics — hệ thống logistics multi-tenant với 3 portal (Core, Customer, Supplier) — dùng Core Portal dạng single-application và nền tảng Micro Frontend trên Nx (1 host + nhiều remote) cho Customer và Supplier Portal multi-tenant. Giảm initial bundle của Core Portal từ 12 MB xuống 3 MB nhờ bundle analysis, code splitting và lazy loading theo route. Xây dựng CI/CD Docker/Kubernetes trên 4 repository với unit test Jasmine và quality gate SonarQube, đồng thời refactor các module UI cũ (Bootstrap → Tailwind) mà vẫn giữ production ổn định. Dẫn dắt team 8 lập trình viên frontend — luôn trực tiếp tham gia — trong chương trình 60 người."
+        "desc": "Kiến trúc frontend Angular cho cả 3 portal của nền tảng VELA (Indo Trans Logistics) — Core Portal dạng single-application và nền tảng Micro Frontend trên Nx (1 host + nhiều remote) cho Customer và Supplier Portal multi-tenant. Giảm initial bundle của Core Portal từ 12 MB xuống 3 MB nhờ bundle analysis, code splitting và lazy loading theo route. Xây dựng CI/CD Docker/Kubernetes trên 4 repository với unit test Jasmine và quality gate SonarQube, đồng thời refactor các module UI cũ (Bootstrap → Tailwind) mà vẫn giữ production ổn định. Dẫn dắt team 8 lập trình viên frontend — luôn trực tiếp tham gia — trong chương trình 60 người."
       },
       {
         "role": "Senior Frontend Developer",
