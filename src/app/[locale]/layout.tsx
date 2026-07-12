@@ -9,12 +9,12 @@ import { AppFooter } from "@/shared/components/AppFooter"
 import { site } from "@/core/config/site"
 
 const titles: Record<string, string> = {
-  en: "Phuong Bui Thanh — Senior Frontend Engineer & Team Lead",
-  vi: "Phuong Bui Thanh — Senior Frontend Engineer & Team Lead",
+  en: "Phuong Bui Thanh — Senior Frontend Developer (React/Next.js)",
+  vi: "Phuong Bui Thanh — Senior Frontend Developer (React/Next.js)",
 }
 const descriptions: Record<string, string> = {
-  en: "Senior Frontend Engineer & Team Lead. Eight years building enterprise web platforms with React/Next.js and Angular — I design frontend architecture, keep it fast, and lead the team that ships it.",
-  vi: "Senior Frontend Engineer & Team Lead. 8 năm xây dựng các nền tảng web doanh nghiệp với React/Next.js và Angular — thiết kế kiến trúc frontend, giữ cho nó nhanh, và dẫn dắt đội ngũ đưa nó ra sản phẩm.",
+  en: "Senior Frontend Developer with 8 years in JavaScript/TypeScript. Deep expertise in React/Next.js with SSR, bundle optimization, Micro Frontend (Nx), and CI/CD for containerized deployments. Led a frontend team of 8 in a 60-person program.",
+  vi: "Senior Frontend Developer với 8 năm kinh nghiệm JavaScript/TypeScript. Chuyên sâu React/Next.js với SSR, tối ưu bundle, Micro Frontend (Nx), và CI/CD cho triển khai container hóa. Đã dẫn dắt một team frontend 8 người trong chương trình 60 người.",
 }
 
 export async function generateMetadata({

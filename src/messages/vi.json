@@ -8,9 +8,9 @@
     "localeSwitch": "Ngôn ngữ"
   },
   "hero": {
-    "eyebrow": "Senior Frontend Engineer & Team Lead",
+    "eyebrow": "Senior Frontend Developer · React / Next.js",
     "name": "Phuong Bui Thanh",
-    "lede": "8 năm xây dựng các nền tảng web doanh nghiệp với **React/Next.js** và **Angular**. Tôi thiết kế kiến trúc frontend, giữ cho nó nhanh, và dẫn dắt đội ngũ đưa nó ra sản phẩm.",
+    "lede": "Senior Frontend Developer với 8 năm kinh nghiệm JavaScript/TypeScript, xây dựng, kiểm thử và vận hành các ứng dụng web hiệu năng cao ở quy mô doanh nghiệp. Chuyên sâu **React/Next.js** với **Server-Side Rendering (SSR)**, tối ưu bundle, kiến trúc Micro Frontend (Nx Monorepo), và CI/CD cho triển khai container hóa (Docker, Kubernetes). Nền tảng TypeScript vững chắc trên cả hai hệ sinh thái React/Next.js và **Angular** — một team leader trực tiếp code, đã dẫn dắt một frontend team 8 người trong chương trình logistics 60 người.",
     "viewWork": "Xem dự án",
     "downloadCv": "Tải CV",
     "meta": ["TP. Hồ Chí Minh", "8 năm kinh nghiệm", "dẫn dắt team 8 người"],
@@ -45,7 +45,7 @@
       { "num": "8", "label": "năm làm frontend" },
       { "num": "8", "label": "developer đã dẫn dắt" },
       { "num": "3", "label": "portal đã kiến trúc" },
-      { "num": "−75%", "label": "initial bundle", "accent": true }
+      { "num": "12 MB → 3 MB", "label": "giảm initial bundle size", "accent": true }
     ]
   },
   "work": {
@@ -61,7 +61,7 @@
     "rows": [
       {
         "name": "VELA Logistics Platform",
-        "meta": "Frontend Team Leader · Jul 2023 – Mar 2026",
+        "meta": "Indo Trans Logistics · Frontend Team Leader · Jul 2023 – Mar 2026",
         "problem": "Nền tảng logistics multi-tenant cho người dùng nội bộ và bên ngoài — ba portal, một chương trình 60 người, các team cần ship song song mà không giẫm chân nhau.",
         "decision": "Ba repository, tất cả multi-tenant: Core Portal **React/Next.js** dạng ứng dụng đơn, và các nền tảng **Micro Frontend Angular trên Nx Monorepo** riêng biệt (host + remotes) cho Customer và Supplier. Quality gate Jasmine + SonarQube trong pipeline CI/CD Docker/Kubernetes.",
         "outcome": "Deploy độc lập và phát triển song song giữa các team; initial bundle của Core Portal giảm từ **12 MB xuống 3 MB** (webpack-bundle-analyzer); dẫn dắt team 8 người xây dựng và vận hành.",
@@ -73,19 +73,19 @@
         "name": "SOGUS — Examination Platform",
         "meta": "Frontend Team Leader · Nov 2022 – Jul 2023",
         "problem": "Sàng lọc ứng viên với nhiều hình thức đánh giá — và hai nhóm người dùng rất khác nhau: quản trị viên nội bộ và ứng viên làm bài thi.",
-        "decision": "Hai ứng dụng riêng biệt: **Angular** cho portal quản trị nội bộ, **React/Next.js** cho landing, phỏng vấn và luồng làm bài phía ứng viên.",
+        "decision": "Dẫn dắt thiết kế frontend trên hai ứng dụng — **React/Next.js (Pages Router)** với **Server-Side Rendering (SSR)** cho landing, phỏng vấn và luồng làm bài phía ứng viên (trang SEO-critical, fast first render), và **Angular** cho portal quản trị nội bộ.",
         "outcome": "Vòng đời bài thi thống nhất trên cả hai ứng dụng, giao bởi project team 10 người với frontend workstream do tôi dẫn dắt.",
         "role": "Kiến trúc frontend trên cả hai stack, lập kế hoạch task, review PR, làm việc với stakeholder.",
-        "tech": "Angular · React · Next.js · TypeScript · Java · PostgreSQL"
+        "tech": "Angular · React · Next.js · SSR · TypeScript · Java · PostgreSQL"
       },
       {
         "name": "Medbuy — Pharmaceutical E-commerce",
         "meta": "Senior Frontend Developer · Dec 2022 – Jul 2023",
         "problem": "Sàn thương mại điện tử kết nối nhà cung cấp dược phẩm, đại lý và người dùng cuối — UX responsive với tích hợp backend ổn định.",
-        "decision": "Frontend React/Next.js xây dựng sát cùng đội UX/UI; thống nhất REST API contract với team backend NestJS.",
+        "decision": "Xây dựng UI responsive, đúng thiết kế bằng **React/Next.js**, áp dụng **SSR** cho các trang sản phẩm và danh sách; tích hợp REST API với backend **NestJS**; deploy container hóa với **Docker**.",
         "outcome": "Giao diện responsive, đúng thiết kế, chạy production với deployment container hóa.",
         "role": "Triển khai frontend và tích hợp API trong project team 10 người.",
-        "tech": "React · Next.js · NestJS · TypeScript · Docker"
+        "tech": "React · Next.js · SSR · NestJS · TypeScript · Docker"
       },
       {
         "name": "Kensa Order System",
@@ -103,22 +103,28 @@
     "tag": "2017 → 2026",
     "items": [
       {
-        "role": "Frontend Team Leader",
+        "role": "Frontend Team Leader (hands-on)",
         "org": "Indo Trans Logistics — Ho Chi Minh City",
         "dates": "Jul 2023 – Mar 2026",
-        "desc": "Dẫn dắt 8 lập trình viên frontend trên nền tảng logistics VELA. Sở hữu kiến trúc, chuẩn engineering và quy trình release trên 4 repository — luôn trực tiếp tham gia."
+        "desc": "Kiến trúc frontend cho nền tảng VELA của Indo Trans Logistics — hệ thống logistics multi-tenant với 3 portal (Core, Customer, Supplier) — dùng Core Portal dạng single-application và nền tảng Micro Frontend trên Nx (1 host + nhiều remote) cho Customer và Supplier Portal multi-tenant. Giảm initial bundle của Core Portal từ 12 MB xuống 3 MB nhờ bundle analysis, code splitting và lazy loading theo route. Xây dựng CI/CD Docker/Kubernetes trên 4 repository với unit test Jasmine và quality gate SonarQube, đồng thời refactor các module UI cũ (Bootstrap → Tailwind) mà vẫn giữ production ổn định. Dẫn dắt team 8 lập trình viên frontend — luôn trực tiếp tham gia — trong chương trình 60 người."
       },
       {
         "role": "Senior Frontend Developer",
         "org": "AMIT Group Joint Stock Company — Ho Chi Minh City",
         "dates": "Dec 2021 – Jul 2023",
-        "desc": "Dẫn dắt các team frontend nhỏ (3–5 lập trình viên) trên nhiều dự án khách hàng song song. Ước lượng, phân tích kỹ thuật và trao đổi trực tiếp với khách hàng bên cạnh việc phát triển."
+        "desc": "Phát triển và triển khai các ứng dụng web doanh nghiệp và khách hàng bằng React/Next.js với TypeScript, sử dụng Server-Side Rendering (SSR) cho các trang SEO-critical, nhiều dữ liệu (SOGUS, Medbuy). Xây dựng và tích hợp REST API với Node.js (NestJS) và Laravel, deploy trên Linux với Docker. Dẫn dắt các team frontend nhỏ (3–5 lập trình viên) trên nhiều dự án khách hàng song song, cùng việc ước lượng, phân tích kỹ thuật và trao đổi trực tiếp với khách hàng."
       },
       {
         "role": "Frontend Developer",
         "org": "AMIT Group Joint Stock Company — Ho Chi Minh City",
         "dates": "Jun 2018 – Dec 2021",
-        "desc": "Xây dựng các ứng dụng web responsive với Angular, React và WordPress; tính năng fullstack với Laravel và MySQL. Bắt đầu là thực tập sinh (Jun–Dec 2017), quay lại làm full-time sau khi tốt nghiệp."
+        "desc": "Xây dựng các ứng dụng web responsive bằng React, Angular và WordPress cho khách hàng doanh nghiệp; phát triển tính năng fullstack với PHP/Laravel và MySQL (Kensa Order System)."
+      },
+      {
+        "role": "Frontend Internship",
+        "org": "AMIT Group — Ho Chi Minh City",
+        "dates": "Jun 2017 – Dec 2017",
+        "desc": "Chuyển đổi PSD sang HTML/CSS và xây dựng tương tác AJAX, hỗ trợ các lập trình viên senior trước khi quay lại làm full-time sau khi tốt nghiệp."
       }
     ]
   },
@@ -128,21 +134,29 @@
     "lines": [
       {
         "k": "Frontend",
-        "v": "**React, Next.js, Angular (Signals, Standalone Components), TypeScript, RxJS** — Redux Toolkit, TanStack Query, Reactive Forms, Tailwind, Angular Material, Ant Design"
+        "v": "**React, Next.js, Angular (Signals, Standalone Components), TypeScript, RxJS** — Redux Toolkit, TanStack Query, Zustand, Reactive Forms, React Testing Library, Tailwind, Angular Material, Material UI, Ant Design"
       },
       {
         "k": "Kiến trúc & Delivery",
-        "v": "**Nx Monorepo, Micro Frontend, Module Federation** — Docker, Kubernetes, GitLab CI, SonarQube, Jasmine, Jest, Cypress, AWS (EC2, S3, CloudFront, Route 53, IAM)"
+        "v": "**Nx Monorepo, Micro Frontend, Module Federation, SSR/CSR/SSG rendering strategies** — Docker, Kubernetes, GitLab CI, SonarQube, Lighthouse, PageSpeed Insights, AWS (EC2, S3, CloudFront, Route 53, IAM)"
+      },
+      {
+        "k": "Kiểm thử & Chất lượng",
+        "v": "Jest, React Testing Library, Cypress, Jasmine, integration & E2E testing, SonarQube, debugging & troubleshooting"
+      },
+      {
+        "k": "AI-assisted Dev",
+        "v": "Claude Code, Cursor — coding, debugging, refactoring, test generation"
       },
       {
         "k": "Khác",
-        "v": "Node.js (NestJS, Express), PHP (Laravel), REST API, GraphQL — và workflow AI-assisted hằng ngày với Cursor và Claude Code"
+        "v": "Node.js (NestJS, Express), PHP (Laravel), REST API, GraphQL"
       }
     ]
   },
   "contact": {
     "title": "Liên hệ",
-    "tag": "sẵn sàng cho vị trí senior frontend & lead",
+    "tag": "sẵn sàng cho vai trò Senior Frontend (React/Next.js) và Frontend Lead — đặc biệt ở nơi scale, hiệu năng và product ownership thực sự quan trọng",
     "headlinePre": "Bạn đang xây thứ gì đó mà scale, hiệu năng và chất lượng đội ngũ thực sự quan trọng? ",
     "email": "btphuong2017@gmail.com",
     "phone": "+84 964 747 781",
