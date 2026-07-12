@@ -8,9 +8,9 @@
     "localeSwitch": "Language"
   },
   "hero": {
-    "eyebrow": "Senior Frontend Engineer & Team Lead",
+    "eyebrow": "Senior Frontend Developer · React / Next.js",
     "name": "Phuong Bui Thanh",
-    "lede": "Eight years building enterprise web platforms with **React/Next.js** and **Angular**. I design frontend architecture, keep it fast, and lead the team that ships it.",
+    "lede": "Senior Frontend Developer with 8 years of experience in JavaScript/TypeScript, building, testing and operating high-performance web applications at enterprise scale. Deep expertise in **React/Next.js** with **Server-Side Rendering (SSR)**, bundle optimization, Micro Frontend architecture (Nx Monorepo), and CI/CD for containerized deployments (Docker, Kubernetes). Strong TypeScript foundation across both the React/Next.js and **Angular** ecosystems — and a hands-on team leader who led a frontend team of 8 in a 60-person logistics program.",
     "viewWork": "View work",
     "downloadCv": "Download CV",
     "meta": ["Ho Chi Minh City", "8 yrs experience", "led a team of 8"],
@@ -45,7 +45,7 @@
       { "num": "8", "label": "years frontend" },
       { "num": "8", "label": "developers led" },
       { "num": "3", "label": "portals architected" },
-      { "num": "−75%", "label": "initial bundle size", "accent": true }
+      { "num": "12 MB → 3 MB", "label": "initial bundle size reduction", "accent": true }
     ]
   },
   "work": {
@@ -61,7 +61,7 @@
     "rows": [
       {
         "name": "VELA Logistics Platform",
-        "meta": "Frontend Team Leader · Jul 2023 – Mar 2026",
+        "meta": "Indo Trans Logistics · Frontend Team Leader · Jul 2023 – Mar 2026",
         "problem": "A multi-tenant logistics platform for internal and external users — three portals, one 60-person program, teams that needed to ship in parallel without stepping on each other.",
         "decision": "Three repositories, all multi-tenant: a **React/Next.js Core Portal** as a single application, and **separate Angular Nx Monorepo Micro Frontend platforms** (host + remotes) for the Customer and Supplier portals. Jasmine + SonarQube quality gates in a Docker/Kubernetes CI/CD pipeline.",
         "outcome": "Independent deployments and parallel team development; Core Portal initial bundle cut from **12 MB to 3 MB** (webpack-bundle-analyzer); led the team of 8 that built and shipped it.",
@@ -73,19 +73,19 @@
         "name": "SOGUS — Examination Platform",
         "meta": "Frontend Team Leader · Nov 2022 – Jul 2023",
         "problem": "Candidate screening with multiple assessment formats — and two very different audiences: internal administrators and candidates taking tests.",
-        "decision": "Two separate applications: **Angular** for the internal administration portal, **React/Next.js** for the candidate-facing landing, interview and testing flows.",
+        "decision": "Led frontend design across two applications — **React/Next.js (Pages Router)** with **Server-Side Rendering (SSR)** for the candidate-facing landing, interview and testing flows (SEO-critical pages, fast first render), and **Angular** for the internal administration portal.",
         "outcome": "A unified exam lifecycle across both apps, delivered by a 10-person project team with the frontend workstream led by me.",
         "role": "Frontend architecture across both stacks, task planning, PR review, stakeholder communication.",
-        "tech": "Angular · React · Next.js · TypeScript · Java · PostgreSQL"
+        "tech": "Angular · React · Next.js · SSR · TypeScript · Java · PostgreSQL"
       },
       {
         "name": "Medbuy — Pharmaceutical E-commerce",
         "meta": "Senior Frontend Developer · Dec 2022 – Jul 2023",
         "problem": "E-commerce connecting pharmaceutical suppliers, agents and end users — responsive UX with reliable backend integration.",
-        "decision": "React/Next.js frontend built in close collaboration with UX/UI designers; REST API contracts agreed with the NestJS backend team.",
+        "decision": "Developed responsive, design-accurate UIs in **React/Next.js**, applying **SSR** for product and listing pages; integrated REST APIs with the **NestJS** backend; containerized deployment with **Docker**.",
         "outcome": "Design-accurate, responsive interfaces shipped to production with containerized deployment.",
         "role": "Frontend implementation and API integration on a 10-person project team.",
-        "tech": "React · Next.js · NestJS · TypeScript · Docker"
+        "tech": "React · Next.js · SSR · NestJS · TypeScript · Docker"
       },
       {
         "name": "Kensa Order System",
@@ -103,22 +103,28 @@
     "tag": "2017 → 2026",
     "items": [
       {
-        "role": "Frontend Team Leader",
+        "role": "Frontend Team Leader (hands-on)",
         "org": "Indo Trans Logistics — Ho Chi Minh City",
         "dates": "Jul 2023 – Mar 2026",
-        "desc": "Led 8 frontend developers on the VELA logistics platform. Owned architecture, engineering standards and release processes across 4 repositories — hands-on throughout."
+        "desc": "Architected the frontend for Indo Trans Logistics' VELA platform — a multi-tenant logistics system with 3 portals (Core, Customer, Supplier) — using a single-application Core Portal and an Nx-based Micro Frontend platform (1 host + multiple remotes) for the multi-tenant Customer and Supplier Portals. Cut the Core Portal's initial bundle from 12 MB to 3 MB through bundle analysis, code splitting and route-based lazy loading. Built Docker/Kubernetes CI/CD across 4 repositories with Jasmine unit tests and SonarQube quality gates, and refactored legacy UI modules (Bootstrap → Tailwind) while keeping production releases stable. Led the team of 8 frontend developers — hands-on throughout — in a 60-person program."
       },
       {
         "role": "Senior Frontend Developer",
         "org": "AMIT Group Joint Stock Company — Ho Chi Minh City",
         "dates": "Dec 2021 – Jul 2023",
-        "desc": "Led small frontend teams (3–5 developers) across concurrent client projects. Estimation, technical scoping and direct customer communication alongside delivery."
+        "desc": "Developed and delivered enterprise and client-facing web applications with React/Next.js in TypeScript, using Server-Side Rendering (SSR) for SEO-critical, data-heavy views (SOGUS, Medbuy). Built and integrated REST APIs with Node.js (NestJS) and Laravel, and deployed on Linux with Docker. Led small frontend teams (3–5 developers) across concurrent client projects, with estimation, technical scoping and direct customer communication alongside delivery."
       },
       {
         "role": "Frontend Developer",
         "org": "AMIT Group Joint Stock Company — Ho Chi Minh City",
         "dates": "Jun 2018 – Dec 2021",
-        "desc": "Built responsive web applications with Angular, React and WordPress; fullstack features with Laravel and MySQL. Started as an intern (Jun–Dec 2017), returned full-time after graduation."
+        "desc": "Built responsive web applications with React, Angular and WordPress for enterprise clients; developed fullstack features with PHP/Laravel and MySQL (Kensa Order System)."
+      },
+      {
+        "role": "Frontend Internship",
+        "org": "AMIT Group — Ho Chi Minh City",
+        "dates": "Jun 2017 – Dec 2017",
+        "desc": "PSD-to-HTML/CSS implementation and AJAX-driven interactions, supporting senior developers before returning full-time after graduation."
       }
     ]
   },
@@ -128,21 +134,29 @@
     "lines": [
       {
         "k": "Frontend",
-        "v": "**React, Next.js, Angular (Signals, Standalone Components), TypeScript, RxJS** — Redux Toolkit, TanStack Query, Reactive Forms, Tailwind, Angular Material, Ant Design"
+        "v": "**React, Next.js, Angular (Signals, Standalone Components), TypeScript, RxJS** — Redux Toolkit, TanStack Query, Zustand, Reactive Forms, React Testing Library, Tailwind, Angular Material, Material UI, Ant Design"
       },
       {
         "k": "Architecture & delivery",
-        "v": "**Nx Monorepo, Micro Frontend, Module Federation** — Docker, Kubernetes, GitLab CI, SonarQube, Jasmine, Jest, Cypress, AWS (EC2, S3, CloudFront, Route 53, IAM)"
+        "v": "**Nx Monorepo, Micro Frontend, Module Federation, SSR/CSR/SSG rendering strategies** — Docker, Kubernetes, GitLab CI, SonarQube, Lighthouse, PageSpeed Insights, AWS (EC2, S3, CloudFront, Route 53, IAM)"
+      },
+      {
+        "k": "Testing & Quality",
+        "v": "Jest, React Testing Library, Cypress, Jasmine, integration & E2E testing, SonarQube, debugging & troubleshooting"
+      },
+      {
+        "k": "AI-assisted Dev",
+        "v": "Claude Code, Cursor — coding, debugging, refactoring, test generation"
       },
       {
         "k": "Also",
-        "v": "Node.js (NestJS, Express), PHP (Laravel), REST API, GraphQL — and a daily AI-assisted workflow with Cursor and Claude Code"
+        "v": "Node.js (NestJS, Express), PHP (Laravel), REST API, GraphQL"
       }
     ]
   },
   "contact": {
     "title": "Contact",
-    "tag": "open to senior frontend & lead roles",
+    "tag": "open to Senior Frontend (React/Next.js) and Frontend Lead roles — especially where scale, performance and product ownership matter",
     "headlinePre": "Building something where scale, performance and team quality matter? ",
     "email": "btphuong2017@gmail.com",
     "phone": "+84 964 747 781",

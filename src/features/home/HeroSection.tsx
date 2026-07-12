@@ -4,7 +4,7 @@ import { useMessages } from "@/shared/context/I18nContext"
 import { Rich } from "@/shared/components/Rich"
 import { Reveal } from "@/shared/components/Reveal"
 
-const CV_PATH = "/CV-Bui-Thanh-Phuong-Senior-Frontend-React.pdf"
+const CV_PATH = "/CV-Bui-Thanh-Phuong-Senior-Frontend-Developer.pdf"
 
 type PlatformCell = {
   name: string
