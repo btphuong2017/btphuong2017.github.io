@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bùi Thanh Phương, Senior Frontend Developer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=block">
+<style>
+@page { size: A4; margin: 15mm 16mm 14mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --green: #1f7a4d; --ink: #1b1f1d; --mute: #5d6661; --rule: #1b1f1d; }
+body { font: 400 9.6pt/1.42 "IBM Plex Sans", sans-serif; color: var(--ink); }
+.mono { font-family: "IBM Plex Mono", monospace; }
+h1 { font-size: 24pt; font-weight: 700; letter-spacing: -0.01em; line-height: 1.15; }
+.title { margin-top: 3pt; color: var(--green); font: 600 8.6pt/1.3 "IBM Plex Mono", monospace; letter-spacing: 0.22em; text-transform: uppercase; }
+.contact { margin-top: 5pt; font: 400 8.2pt/1.3 "IBM Plex Mono", monospace; color: var(--mute); }
+.contact a { color: var(--green); text-decoration: none; }
+.contact .sep { color: #b8beba; margin: 0 4pt; }
+.head-rule { border: 0; border-top: 2pt solid var(--rule); margin: 9pt 0 12pt; }
+h2 { display: flex; align-items: center; gap: 7pt; font: 600 8.6pt/1 "IBM Plex Mono", monospace; letter-spacing: 0.24em; text-transform: uppercase; margin: 13pt 0 7pt; break-after: avoid; }
+h2::before { content: ""; width: 3.5pt; height: 11pt; background: var(--green); }
+section:first-of-type h2 { margin-top: 0; }
+p { margin: 0; }
+.job { margin-top: 9pt; break-inside: avoid; }
+.job:first-of-type { margin-top: 0; }
+.row { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
+.role { font-weight: 700; font-size: 10pt; }
+.date { font: 400 8.2pt/1 "IBM Plex Mono", monospace; color: var(--mute); white-space: nowrap; }
+.org { margin-top: 1pt; }
+.org b { font-weight: 600; }
+.org span { color: var(--mute); }
+.ctx { margin-top: 3pt; color: var(--mute); }
+.tech { margin-top: 2pt; font: 400 8.2pt/1.35 "IBM Plex Mono", monospace; color: var(--mute); }
+.tech b { color: var(--ink); font-weight: 600; }
+ul { list-style: none; margin-top: 4pt; }
+li { position: relative; padding-left: 13pt; margin-top: 3pt; }
+li::before { content: ""; position: absolute; left: 1pt; top: 4.6pt; width: 5pt; height: 5pt; background: var(--green); }
+.skills { display: grid; grid-template-columns: 34mm 1fr; column-gap: 8pt; row-gap: 4pt; }
+.skills dt { font: 600 8.2pt/1.42 "IBM Plex Mono", monospace; letter-spacing: 0.04em; text-transform: uppercase; }
+.page-break { break-before: page; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Bùi Thanh Phương</h1>
+  <p class="title">Senior Frontend Developer · React / Next.js</p>
+  <p class="contact">+84 964 747 781<span class="sep">/</span><a href="mailto:btphuong2017@gmail.com">btphuong2017@gmail.com</a><span class="sep">/</span><a href="https://btphuong2017.github.io">btphuong2017.github.io</a><span class="sep">/</span>Ho Chi Minh City, Vietnam</p>
+</header>
+<hr class="head-rule">
+
+<section>
+  <h2>Professional Summary</h2>
+  <p>Senior Frontend Developer building, testing and operating high-performance web applications in JavaScript/TypeScript since 2018, at enterprise scale. Deep expertise in React/Next.js with Server-Side Rendering (SSR), bundle optimization, Micro Frontend architecture (Nx Monorepo), and CI/CD for containerized deployments (Docker, Kubernetes). Strong TypeScript foundation across both the React/Next.js and Angular ecosystems. Hands-on team leader with a strong testing, debugging and code-quality discipline across the full release lifecycle. Seeking a senior frontend role with end-to-end ownership of frontend architecture and product quality.</p>
+</section>
+
+<section>
+  <h2>Work Experience</h2>
+
+  <div class="job">
+    <div class="row"><span class="role">Senior Frontend Developer</span><span class="date">Sep 2026 – Present</span></div>
+    <p class="org"><b>FPT Software</b></p>
+    <p class="ctx">Main project: UAV.</p>
+  </div>
+
+  <div class="job">
+    <div class="row"><span class="role">Frontend Team Leader (hands-on)</span><span class="date">Jul 2023 – Mar 2026</span></div>
+    <p class="org"><b>Indo Trans Logistics</b> <span>— Ho Chi Minh City</span></p>
+    <p class="ctx">VELA Logistics Platform — logistics platform with 3 portals: Core Portal (internal operations), Customer Portal and Supplier Portal, all three designed for multi-tenancy. Project team of <b>60</b>; led the frontend team of <b>8</b>.</p>
+    <ul>
+      <li>Architected the <b>Angular</b> frontend for all <b>3 portals</b> in TypeScript — a single-application Core Portal, and two Nx-based Micro Frontend platforms (<b>1 Host + multiple Remotes</b> each) for the Customer and Supplier Portals, enabling independent deployment and parallel team development.</li>
+      <li>Reduced the Core Portal's initial bundle size from <b>12 MB to 3 MB</b> through bundle analysis, dependency import optimization, code splitting and route-based lazy loading — significantly improving initial load and rendering performance.</li>
+      <li>Designed tenant-based configuration and isolation across the three portals, with <b>3 tenants</b> on the Customer and Supplier Portals.</li>
+      <li>Implemented CI/CD pipelines to build Dockerized frontend applications and deploy them to Kubernetes across <b>4 frontend repositories</b> — the three portals plus a repository that tracks VELA's data with the external systems it integrates with — with automated unit tests (Jasmine) and SonarQube quality gates as release gates.</li>
+      <li>Refactored and modernized legacy UI modules (component-level change-detection optimization, Bootstrap-to-Tailwind CSS migration) while keeping production releases stable.</li>
+      <li>Led a team of <b>8 frontend developers</b>: code review workflow, coding standards and a GitFlow-based branching strategy.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="row"><span class="role">Senior Frontend Developer</span><span class="date">Dec 2021 – Jul 2023</span></div>
+    <p class="org"><b>AMIT Group Joint Stock Company</b> <span>— Ho Chi Minh City</span></p>
+    <ul>
+      <li>Developed and delivered multiple enterprise and client-facing web applications with <b>React/Next.js</b> in TypeScript, using <b>Server-Side Rendering</b> for SEO-critical and data-heavy views (see Projects: SOGUS, Medbuy).</li>
+      <li>Built and integrated REST APIs with Node.js (NestJS) and Laravel to support frontend features.</li>
+      <li>Led small frontend teams (<b>3–5 developers</b>): task planning, code review and technical mentoring.</li>
+      <li>Deployed and maintained production applications on Linux servers; participated in containerized deployment with Docker.</li>
+      <li>Contributed to project estimation and technical scoping, working directly with customers on requirements.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="row"><span class="role">Frontend Developer</span><span class="date">Jun 2018 – Dec 2021</span></div>
+    <p class="org"><b>AMIT Group Joint Stock Company</b> <span>— Ho Chi Minh City</span></p>
+    <ul>
+      <li>Built responsive web applications with React, Angular and WordPress for enterprise clients.</li>
+      <li>Developed fullstack features with PHP/Laravel and MySQL (see Projects: Kensa Order System).</li>
+      <li>Previously completed a frontend internship at AMIT Group (Jun–Dec 2017), returning full-time after graduation.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Projects</h2>
+
+  <div class="job">
+    <div class="row"><span class="role">SOGUS — Online Examination &amp; Assessment Platform</span><span class="date">Nov 2022 – Jul 2023</span></div>
+    <p class="ctx">Candidate screening platform supporting multiple assessment formats, including multiple-choice and essay questions. Project team of <b>10</b>.</p>
+    <p class="tech"><b>Tech:</b> React, Next.js (SSR), TypeScript, Angular, Java, PostgreSQL</p>
+    <ul>
+      <li>Built the candidate-facing landing, interview and testing flows with <b>React/Next.js (Pages Router)</b> in TypeScript, using <b>SSR</b> for SEO-critical pages and fast first render.</li>
+      <li>Designed the frontend architecture across two separate applications — React/Next.js for the candidate-facing flows, Angular for the internal administration portal.</li>
+      <li>Coordinated the frontend workstream: task planning, progress tracking, PR review and coding standards.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="row"><span class="role">Medbuy — Pharmaceutical E-commerce Platform</span><span class="date">Dec 2022 – Jul 2023</span></div>
+    <p class="ctx">E-commerce platform connecting pharmaceutical suppliers, agents and end users. Project team of <b>10</b>.</p>
+    <p class="tech"><b>Tech:</b> React, Next.js (SSR), NestJS, TypeScript, Docker</p>
+    <ul>
+      <li>Built responsive, design-accurate user interfaces with React/Next.js, applying <b>SSR</b> for product and listing pages, in close collaboration with UX/UI designers.</li>
+      <li>Collaborated with the backend team on REST API contracts and integrated the APIs into the Next.js frontend.</li>
+      <li>Participated in containerized deployment with Docker.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="row"><span class="role">Kensa Order System — Order &amp; Customer Management</span><span class="date">Mar 2021 – Jul 2021</span></div>
+    <p class="ctx">Order management system with Admin and Customer portals: order tracking, revenue reporting, self-service ordering and payment. Team of <b>2</b>.</p>
+    <p class="tech"><b>Tech:</b> React, Laravel, MySQL, Docker</p>
+    <ul>
+      <li>Designed and built the fullstack system end-to-end, including REST APIs for order processing and reporting.</li>
+      <li>Integrated VNPay and Payoo payment gateways for secure transaction handling.</li>
+      <li>Deployed and operated the production system on Linux with Docker.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Frontend</dt><dd>React, Next.js (SSR/SSG), TypeScript, JavaScript, HTML5, CSS3/SCSS, Angular, Webpack, Vite</dd>
+    <dt>Web Performance</dt><dd>Bundle analysis &amp; optimization, code splitting, lazy loading, Lighthouse / PageSpeed Insights</dd>
+    <dt>Architecture</dt><dd>Nx Monorepo, Micro Frontend, Module Federation, SSR/CSR/SSG rendering strategies</dd>
+    <dt>State &amp; Data</dt><dd>Redux Toolkit, TanStack Query, Zustand, RxJS, REST API, GraphQL</dd>
+    <dt>Testing &amp; Quality</dt><dd>Jest, React Testing Library, Cypress, integration &amp; E2E testing, debugging &amp; troubleshooting, Jasmine, SonarQube</dd>
+    <dt>DevOps &amp; Tooling</dt><dd>Docker, Kubernetes, Linux, CI/CD, Git, AWS (EC2, S3, CloudFront, Route 53, IAM)</dd>
+    <dt>UI Libraries</dt><dd>Material UI, Ant Design, Tailwind, Bootstrap</dd>
+    <dt>Backend</dt><dd>Node.js (NestJS, Express), PHP (Laravel)</dd>
+    <dt>AI-Assisted Dev</dt><dd>Claude Code, Cursor — coding, debugging, refactoring, test generation</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="job">
+    <div class="row"><span class="role">Bachelor of Information Technology</span><span class="date">Oct 2013 – May 2018</span></div>
+    <p class="org"><b>University of Transport and Communications</b> <span>— Ho Chi Minh City Campus</span></p>
+  </div>
+</section>
+
+</body>
+</html>

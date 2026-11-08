@@ -1,0 +1,399 @@
+/* Skill lines. One grid for the whole section: the margins are columns, so a picked row's
+   sun field runs edge to edge, and every row, the head and the project field share columns.
+   Desktop: margin | group | 5 projects | margin. Phone: margin | 5 projects | margin. */
+
+.status {
+  margin-top: 16px;
+  max-width: 62ch;
+  min-height: 3.1em;
+  font-weight: 600;
+}
+
+.status[hidden] {
+  display: none;
+}
+
+.matrix {
+  --name: 2;
+  --p0: 3;
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: calc(var(--m) - 20px) minmax(0, 4fr) repeat(5, minmax(0, 2fr)) calc(var(--m) - 20px);
+  column-gap: 20px;
+  position: relative;
+  isolation: isolate;
+}
+
+.head,
+.row,
+.track,
+.where {
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+.head,
+.row {
+  grid-column: 1 / -1;
+}
+
+/* ---------- head: the projects, in time order ---------- */
+
+.head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--paper);
+  border-bottom: 3px solid var(--ink);
+}
+
+.col {
+  grid-column: calc(var(--c) + var(--p0));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 64px;
+  margin-inline: -10px;
+  padding: 8px 4px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  text-align: center;
+}
+
+button.col {
+  cursor: pointer;
+}
+
+button.col:hover .project {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.15em;
+}
+
+.col[aria-pressed="true"] {
+  background: var(--sun);
+}
+
+.project {
+  font: 800 clamp(18px, 1.6vw, 24px) / 1.1 var(--display);
+  letter-spacing: -0.01em;
+}
+
+.when {
+  font-size: var(--fs-small);
+  font-variant-numeric: tabular-nums;
+}
+
+/* A picked project: a sun field down its column, like an interchange on the map. */
+.field {
+  position: absolute;
+  z-index: -1;
+  inset: 0 -10px;
+  grid-column: calc(var(--c) + var(--p0)) / span 1;
+  background: var(--sun);
+}
+
+/* ---------- rows ---------- */
+
+.row {
+  grid-template-rows: auto auto;
+  align-items: start;
+  padding-block: 18px;
+}
+
+.row[data-lit] {
+  background: var(--sun);
+}
+
+/* Dimming greys only the line and its marks. Text stays ink, so it keeps its contrast and so does
+   the focus ring. */
+.row[data-dim] {
+  --track: var(--paper-2);
+  --mark: color-mix(in srgb, var(--ink) 35%, var(--paper));
+}
+
+.name {
+  grid-column: var(--name);
+  grid-row: 1;
+  align-self: center;
+  font-size: clamp(22px, 2vw, 30px);
+  line-height: 1.1;
+}
+
+.name button {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.name button:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.12em;
+}
+
+.items {
+  grid-column: var(--name);
+  grid-row: 2;
+  margin-top: 6px;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+/* ---------- the line, its stops and ticks ---------- */
+
+.track {
+  grid-column: var(--p0) / span 5;
+  grid-row: 1;
+  align-self: center;
+  position: relative;
+  height: 28px;
+}
+
+.svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Horizontal only, so the stretch never thickens it. pathLength 1: the dash is the whole line. */
+.line {
+  fill: none;
+  stroke: var(--track, var(--ink));
+  stroke-width: 10;
+  stroke-dasharray: 1 1;
+  transition: stroke 0.25s;
+}
+
+.cell {
+  grid-column: calc(var(--c) + 1);
+  grid-row: 1;
+  display: grid;
+  place-items: center;
+  margin-inline: -10px;
+}
+
+.stop {
+  width: 18px;
+  height: 18px;
+  border: 3px solid var(--mark, var(--ink));
+  background: var(--paper);
+  transform: rotate(45deg);
+  transition: border-color 0.25s;
+}
+
+.tick {
+  width: 3px;
+  height: 22px;
+  background: var(--track, var(--ink));
+  transition: background-color 0.25s;
+}
+
+/* ---------- what the group did at each stop ---------- */
+
+.used,
+.where {
+  grid-column: var(--p0) / span 5;
+  grid-row: 2;
+  margin: 10px 0 0;
+}
+
+.used {
+  font-size: var(--fs-small);
+}
+
+.at {
+  grid-column: calc(var(--c) + 1);
+  grid-row: 1;
+  font-size: var(--fs-small);
+  line-height: 1.45;
+}
+
+.at dd {
+  margin: 0;
+}
+
+/* The column already names the project on desktop. */
+.at dt {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Every stop's text is always shown. A pick only adds the sun field and greys other lines. */
+
+/* ---------- entrance: each line draws in, its stops land as it passes ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .row[data-draw="wait"] .line {
+    stroke-dashoffset: 1;
+  }
+
+  .row[data-draw="wait"] .stop,
+  .row[data-draw="wait"] .tick {
+    opacity: 0;
+  }
+
+  .row[data-draw="go"] .line {
+    animation: draw 0.9s cubic-bezier(0.4, 0, 0.6, 1) calc(var(--k, 0) * 90ms) both;
+  }
+
+  .row[data-draw="go"] .stop {
+    animation: land 0.3s cubic-bezier(0.2, 0, 0.2, 1.4) calc(var(--k, 0) * 90ms + 0.12s + var(--c) * 0.17s) both;
+  }
+
+  .row[data-draw="go"] .tick {
+    animation: appear 0.2s calc(var(--k, 0) * 90ms + 0.12s + var(--c) * 0.17s) both;
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+
+@keyframes land {
+  from {
+    opacity: 0;
+    transform: rotate(45deg) scale(0.3);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+}
+
+/* ---------- below 1100: the columns are too narrow for stop text, so it lists under the row ---------- */
+
+@media (max-width: 1099px) {
+  .items {
+    grid-column: 2 / -2;
+  }
+
+  .used,
+  .where {
+    grid-column: 2 / -2;
+    grid-row: 3;
+    display: block;
+    max-width: 640px;
+  }
+
+  .at {
+    display: grid;
+    grid-template-columns: 4.4em minmax(0, 1fr);
+    gap: 0 10px;
+  }
+
+  .at + .at {
+    margin-top: 6px;
+  }
+
+  .at dt {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip-path: none;
+    font: 800 15px/1.45 var(--display);
+  }
+}
+
+/* ---------- phone: each group is its own strip under the five projects ---------- */
+
+@media (max-width: 699px) {
+  .matrix {
+    --name: 2 / span 5;
+    --p0: 2;
+    grid-template-columns: calc(var(--m) - 4px) repeat(5, minmax(0, 1fr)) calc(var(--m) - 4px);
+    column-gap: 4px;
+  }
+
+  .field {
+    display: none;
+  }
+
+  .col {
+    margin-inline: -2px;
+    min-height: 56px;
+    padding-inline: 0;
+  }
+
+  .project {
+    font-size: 15px;
+  }
+
+  .when {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .century {
+    display: none;
+  }
+
+  .row {
+    grid-template-rows: auto;
+    padding-block: 16px 18px;
+  }
+
+  .name,
+  .track,
+  .items,
+  .used,
+  .where {
+    grid-row: auto;
+  }
+
+  .name {
+    font-size: 22px;
+  }
+
+  .name button {
+    min-height: 48px;
+  }
+
+  .track {
+    margin-top: 6px;
+  }
+
+  .cell {
+    margin-inline: -2px;
+    align-self: stretch;
+  }
+
+  .cell[data-on] {
+    background: var(--sun);
+  }
+
+  .stop {
+    width: 16px;
+    height: 16px;
+  }
+
+  .items {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+}

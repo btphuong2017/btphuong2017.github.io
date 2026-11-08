@@ -1,19 +1,16 @@
-import { HeroSection } from "@/features/home/HeroSection"
-import { MetricsStrip } from "@/features/home/MetricsStrip"
-import { WorkSection } from "@/features/home/WorkSection"
-import { ExperienceSection } from "@/features/home/ExperienceSection"
-import { SkillsSection } from "@/features/home/SkillsSection"
-import { ContactSection } from "@/features/home/ContactSection"
+import { pageMetadata } from "@/content/metadata"
+import { defaultOrder } from "@/features/sections/order"
+import { Page } from "@/features/sections/Page"
+import type { Locale } from "@/i18n/routing"
 
-export default function LocaleHomePage() {
-  return (
-    <>
-      <HeroSection />
-      <MetricsStrip />
-      <WorkSection />
-      <ExperienceSection />
-      <SkillsSection />
-      <ContactSection />
-    </>
-  )
+type Props = { params: Promise<{ locale: Locale }> }
+
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params
+  return pageMetadata(locale)
+}
+
+export default async function HomePage({ params }: Props) {
+  const { locale } = await params
+  return <Page locale={locale} order={defaultOrder} path="" />
 }

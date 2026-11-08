@@ -1,174 +1,331 @@
 {
-  "nav": {
-    "mark": "btphuong.dev",
-    "work": "Work",
-    "experience": "Experience",
-    "skills": "Skills",
-    "contact": "Contact",
-    "localeSwitch": "Language"
+  "meta": {
+    "title": "Bùi Thanh Phương, Senior Frontend Developer",
+    "description": "Bùi Thanh Phương, Senior Frontend Developer in Ho Chi Minh City. React/Next.js with SSR, Angular with Nx Micro Frontend. A career drawn as two lines: the people inside a company and the people outside it."
   },
-  "hero": {
-    "eyebrow": "Senior Frontend Developer · React / Next.js",
-    "name": "Phuong Bui Thanh",
-    "lede": "Senior Frontend Developer with 8 years of experience in JavaScript/TypeScript, building, testing and operating high-performance web applications at enterprise scale. Deep expertise in **React/Next.js** with **Server-Side Rendering (SSR)**, bundle optimization, Micro Frontend architecture (Nx Monorepo), and CI/CD for containerized deployments (Docker, Kubernetes). Strong TypeScript foundation across both the React/Next.js and **Angular** ecosystems — and a hands-on team leader who led a frontend team of 8 in a 60-person logistics program.",
-    "viewWork": "View work",
-    "downloadCv": "Download CV",
-    "meta": ["Ho Chi Minh City", "8 yrs experience", "led a team of 8"],
-    "platformMap": {
-      "title": "VELA · the frontend I architected",
-      "src": "3 repositories · all multi-tenant",
-      "cells": [
-        {
-          "name": "core-portal",
-          "kind": "Angular · single app",
-          "desc": "internal operations",
-          "tag": "multi-tenant"
-        },
-        {
-          "name": "customer-portal",
-          "kind": "Angular · Nx monorepo · MFE",
-          "desc": "host + remotes",
-          "tag": "multi-tenant"
-        },
-        {
-          "name": "supplier-portal",
-          "kind": "Angular · Nx monorepo · MFE",
-          "desc": "host + remotes",
-          "tag": "multi-tenant"
-        }
-      ],
-      "note": "Each portal gets the architecture its delivery needs — a single-application Angular Core Portal owned end-to-end by one team; Customer and Supplier ship as independent Angular Nx Micro Frontend platforms so teams deploy in parallel."
+  "nav": {
+    "skip": "Skip to main content",
+    "label": "Main navigation",
+    "locale": "Language",
+    "cv": "CV",
+    "cvLabel": "Download CV (PDF)",
+    "links": {
+      "drawing": "VELA",
+      "sheets": "Other work",
+      "experience": "Experience",
+      "contact": "Contact"
     }
   },
-  "metrics": {
-    "items": [
-      { "num": "8", "label": "years frontend" },
-      { "num": "8", "label": "developers led" },
-      { "num": "3", "label": "portals architected" },
-      { "num": "12 MB → 3 MB", "label": "initial bundle size reduction", "accent": true }
-    ]
+  "hero": {
+    "thesis": "One product, many kinds of user",
+    "sentence": "I'm a Senior Frontend Developer in Ho Chi Minh City, building frontends since 2018 and now on a UAV project at FPT Software. I've built public-facing pages in React/Next.js with SSR, and led a frontend team of 8 on a three-portal logistics platform in Angular and Nx Micro Frontend."
   },
-  "work": {
-    "title": "Selected work",
-    "tag": "Problem → Decision → Outcome",
-    "labels": {
-      "problem": "Problem",
-      "decision": "Decision",
-      "outcome": "Outcome",
-      "role": "My role",
-      "tech": "Tech"
+  "map": {
+    "label": "Map of two lines from 2017 to the end of 2026, with time to scale. Each station links to its project.",
+    "choose": "View by line",
+    "scroll": "Earlier years: scroll the map sideways",
+    "gap": "{n} months with no station, shortened",
+    "lines": {
+      "inside": "People inside the company",
+      "outside": "People outside the company",
+      "both": "Both lines"
     },
-    "rows": [
+    "legend": {
+      "interchange": "Interchange: one product serving both sides",
+      "scale": "Time is to scale; the other direction is not.",
+      "scaleTall": "Time is to scale, except at the marked break; the other direction is not."
+    },
+    "audiences": {
+      "admin": "Admin portal",
+      "customer": "Customer portal",
+      "administrators": "Internal admin",
+      "candidates": "Candidates",
+      "suppliers": "Suppliers",
+      "agents": "Agents",
+      "endUsers": "End users",
+      "corePortal": "Core Portal",
+      "customerPortal": "Customer Portal",
+      "supplierPortal": "Supplier Portal"
+    },
+    "band": {
+      "intern": { "long": "AMIT Group, intern", "short": "Intern" },
+      "developer": { "long": "AMIT Group, Frontend Developer", "short": "AMIT, Developer" },
+      "senior": { "long": "AMIT Group, Senior", "short": "AMIT, Senior" },
+      "teamLeader": { "long": "Indo Trans Logistics, Frontend Team Leader", "short": "Indo Trans, Team Leader" },
+      "fpt": { "long": "FPT Software, UAV project", "short": "FPT Software" }
+    }
+  },
+  "drawing": {
+    "stageLabel": "Illustrative drawing of VELA's frontend architecture. The layers are listed in the parts list.",
+    "illustrative": "Illustrative drawing, not to scale",
+    "takeApart": "Take apart",
+    "hint": "Drag to rotate. Tap a layer to isolate it.",
+    "partsTitle": "Parts list",
+    "techLabel": "Tech",
+    "beats": [
       {
-        "name": "VELA Logistics Platform",
-        "meta": "Indo Trans Logistics · Frontend Team Leader · Jul 2023 – Mar 2026",
-        "problem": "A multi-tenant logistics platform for internal and external users — three portals, one 60-person program, teams that needed to ship in parallel without stepping on each other.",
-        "decision": "Three repositories, all multi-tenant: a **single-application Angular Core Portal**, and **separate Angular Nx Monorepo Micro Frontend platforms** (host + remotes) for the Customer and Supplier portals. Jasmine + SonarQube quality gates in a Docker/Kubernetes CI/CD pipeline.",
-        "outcome": "Independent deployments and parallel team development; Core Portal initial bundle cut from **12 MB to 3 MB** (webpack-bundle-analyzer); led the team of 8 that built and shipped it.",
-        "role": "Architecture, engineering standards, code review workflow, GitFlow strategy — while staying hands-on across the Angular stack, including the Core Portal performance work.",
-        "arch": "**vela frontend** · 3 repos · all multi-tenant\n├── core-portal        **Angular · single app**          — internal operations\n├── customer-portal    **Angular · Nx monorepo · MFE**  — host + remotes\n└── supplier-portal    **Angular · Nx monorepo · MFE**  — host + remotes",
-        "tech": "Angular · TypeScript · RxJS · Nx · Module Federation · Docker · Kubernetes · .NET · Jasmine · SonarQube"
+        "id": "overview",
+        "title": "VELA, taken apart",
+        "body": [
+          "The VELA Logistics Platform has three portals: Core for internal operations, and Customer and Supplier for people outside the company. From July 2023 to March 2026, I was the Frontend Team Leader (hands-on) at Indo Trans Logistics, and I designed the Angular frontend architecture for all three.",
+          "The project team had 60 people. I led the frontend team of 8 and set the code review workflow, the coding standards and a GitFlow-based branching strategy."
+        ]
       },
       {
-        "name": "SOGUS — Examination Platform",
-        "meta": "Frontend Team Leader · Nov 2022 – Jul 2023",
-        "problem": "Candidate screening with multiple assessment formats — and two very different audiences: internal administrators and candidates taking tests.",
-        "decision": "Led frontend design across two applications — **React/Next.js (Pages Router)** with **Server-Side Rendering (SSR)** for the candidate-facing landing, interview and testing flows (SEO-critical pages, fast first render), and **Angular** for the internal administration portal.",
-        "outcome": "A unified exam lifecycle across both apps, delivered by a 10-person project team with the frontend workstream led by me.",
-        "role": "Frontend architecture across both stacks, task planning, PR review, stakeholder communication.",
-        "tech": "Angular · React · Next.js · SSR · TypeScript · Java · PostgreSQL"
+        "id": "core",
+        "title": "Core, one block",
+        "body": [
+          "Core Portal is the internal operations side, a single Angular application. Take the whole drawing apart and it stays one block.",
+          "I reduced Core Portal's initial bundle from 12 MB to 3 MB through bundle analysis, dependency import optimization, code splitting and route-based lazy loading."
+        ]
       },
       {
-        "name": "Medbuy — Pharmaceutical E-commerce",
-        "meta": "Senior Frontend Developer · Dec 2022 – Jul 2023",
-        "problem": "E-commerce connecting pharmaceutical suppliers, agents and end users — responsive UX with reliable backend integration.",
-        "decision": "Developed responsive, design-accurate UIs in **React/Next.js**, applying **SSR** for product and listing pages; integrated REST APIs with the **NestJS** backend; containerized deployment with **Docker**.",
-        "outcome": "Design-accurate, responsive interfaces shipped to production with containerized deployment.",
-        "role": "Frontend implementation and API integration on a 10-person project team.",
-        "tech": "React · Next.js · SSR · NestJS · TypeScript · Docker"
+        "id": "platforms",
+        "title": "Two platforms, a Host each",
+        "body": [
+          "Customer Portal and Supplier Portal are two Micro Frontend platforms on Nx, each with one Host and multiple Remotes. This let teams deploy independently and develop in parallel."
+        ],
+        "note": "The number of Remote blocks in the drawing is illustrative, not the real count."
       },
       {
-        "name": "Kensa Order System",
-        "meta": "Fullstack Developer · Mar 2021 – Jul 2021",
-        "problem": "Order and revenue management with Admin and Customer portals, including live payment.",
-        "decision": "End-to-end build in a two-person team: React frontend, Laravel REST APIs, VNPay and Payoo payment integration, Docker deployment on Linux.",
-        "outcome": "Order processing, reporting and live payment flows running in production.",
-        "role": "Everything frontend-to-backend — the project that taught me what full ownership costs.",
-        "tech": "React · Laravel · MySQL · Docker"
+        "id": "tenants",
+        "title": "Configured by tenant",
+        "body": [
+          "All three portals are meant to be multi-tenant, with tenant-based configuration and isolation. For Customer and Supplier, I designed the frontend for 3 tenants."
+        ]
+      },
+      {
+        "id": "repos",
+        "title": "Four repos, two gates",
+        "body": [
+          "VELA has 4 frontend repositories: three for the three portals, and a fourth that tracks VELA's data with the external systems it integrates with.",
+          "To be released, code had to pass Jasmine unit tests and a SonarQube quality gate."
+        ]
+      },
+      {
+        "id": "rack",
+        "title": "From Docker to Kubernetes",
+        "body": [
+          "I implemented CI/CD pipelines that packaged the frontends as Docker images and deployed them to Kubernetes, across all 4 repositories.",
+          "I also refactored legacy UI modules, optimizing change detection at component level and moving them from Bootstrap to Tailwind, while production releases stayed stable."
+        ]
       }
-    ]
+    ],
+    "layers": {
+      "core": {
+        "name": "Core Portal",
+        "summary": "One Angular application",
+        "more": "One block. It doesn't come apart.",
+        "tech": "Angular, TypeScript, bundle analysis, code splitting, route-based lazy loading"
+      },
+      "platforms": {
+        "name": "Customer + Supplier",
+        "summary": "Two platforms, each with one Host and multiple Remotes",
+        "more": "Remotes lift off the Host. The block count is illustrative.",
+        "tech": "Angular, TypeScript, Nx, Micro Frontend"
+      },
+      "tenants": {
+        "name": "Tenants",
+        "summary": "Configuration plates under the three portals",
+        "more": "Tenant-based configuration and isolation. Customer and Supplier were designed for 3 tenants.",
+        "tech": "Tenant-based configuration, tenant isolation"
+      },
+      "repos": {
+        "name": "Repos and gates",
+        "summary": "4 repos through Jasmine and SonarQube",
+        "more": "The fourth repo connects to the external systems VELA integrates with.",
+        "tech": "Jasmine, SonarQube, GitFlow"
+      },
+      "rack": {
+        "name": "Docker, Kubernetes",
+        "summary": "Where CI/CD ends up",
+        "more": "The number of cases in the rack is illustrative.",
+        "tech": "Docker, Kubernetes, CI/CD"
+      }
+    },
+    "labels": {
+      "core": "One block",
+      "host": "Host",
+      "remote": "Remote",
+      "customer": "Customer",
+      "supplier": "Supplier",
+      "tenant": "Tenant configuration",
+      "jasmine": "Jasmine",
+      "sonarqube": "SonarQube",
+      "docker": "Docker",
+      "kubernetes": "Kubernetes",
+      "external": "External systems"
+    },
+    "repos": {
+      "core": "Core Portal repo",
+      "customer": "Customer Portal repo",
+      "supplier": "Supplier Portal repo",
+      "integration": "Integration data tracking repo"
+    }
+  },
+  "sheets": {
+    "title": "Other drawings",
+    "items": {
+      "sogus": {
+        "title": "SOGUS, two applications",
+        "role": "Senior Frontend Developer, coordinating the frontend workstream. Project team of 10.",
+        "body": "SOGUS screens candidates through online assessments, including multiple-choice and essay questions. It runs as two separate applications. Candidates get React/Next.js (Pages Router) for the landing, interview and testing flows, with SSR for SEO-critical pages and a fast first render. Internal administrators get an Angular portal. I designed the frontend architecture across both and coordinated the frontend workstream: task planning, progress tracking, PR review and coding standards.",
+        "tech": "React, Next.js (SSR), TypeScript, Angular, Java, PostgreSQL",
+        "plateLabel": "Illustrative drawing of SOGUS: a red block for candidates on React/Next.js and a blue block for internal administration on Angular, on one base plate.",
+        "plate": { "outside": "Candidates", "inside": "Admin", "outsideTech": "React/Next.js, SSR", "insideTech": "Angular" }
+      },
+      "medbuy": {
+        "title": "Medbuy, three sides",
+        "role": "Senior Frontend Developer. Project team of 10.",
+        "body": "Medbuy is an e-commerce platform connecting pharmaceutical suppliers, agents and end users. I built responsive, design-accurate interfaces in React/Next.js, working closely with UX/UI designers and using SSR for product and listing pages. I worked out REST API contracts with the backend team, integrated those APIs into the Next.js frontend, and took part in containerized deployment with Docker.",
+        "tech": "React, Next.js (SSR), NestJS, TypeScript, Docker",
+        "plateLabel": "Illustrative drawing of Medbuy: a red three-sided prism for suppliers, agents and end users, all outside the company.",
+        "plate": { "suppliers": "Suppliers", "agents": "Agents", "endUsers": "End users" }
+      },
+      "kensa": {
+        "title": "Kensa, a team of two",
+        "role": "Frontend Developer, fullstack on this project. Team of 2.",
+        "body": "Kensa is an order management system with Admin and Customer portals: order tracking, revenue reporting, and self-service ordering and payment. I designed and built the system end to end: React on the front, Laravel REST APIs for order processing and reporting, MySQL underneath, and VNPay and Payoo for payment. I also deployed it and ran it in production on Linux with Docker.",
+        "tech": "React, Laravel, MySQL, Docker",
+        "plateLabel": "Illustrative drawing of Kensa: a blue block for Admin and a red block for Customer, on one base plate with VNPay and Payoo attached.",
+        "plate": { "inside": "Admin", "outside": "Customer", "vnpay": "VNPay", "payoo": "Payoo" }
+      }
+    },
+    "illustrative": "Illustrative drawing, not to scale",
+    "earlier": {
+      "title": "The earlier years at AMIT",
+      "items": [
+        {
+          "when": "2017–2018",
+          "body": "I started at AMIT Group as a frontend intern, from June to December 2017. After graduating, I came back full-time in June 2018."
+        },
+        {
+          "when": "2018–2021",
+          "body": "As a Frontend Developer, I built responsive web applications with React, Angular and WordPress for enterprise clients, and fullstack features with PHP/Laravel and MySQL."
+        },
+        {
+          "when": "2021–2023",
+          "body": "As a Senior Frontend Developer, I built React/Next.js applications in TypeScript, wrote REST APIs with NestJS and Laravel, and led small frontend teams of 3–5: task planning, code review, technical mentoring. I deployed and maintained production applications on Linux, and worked directly with customers on estimates and scope."
+        }
+      ]
+    }
   },
   "experience": {
     "title": "Experience",
-    "tag": "2017 → 2026",
-    "items": [
-      {
-        "role": "Frontend Team Leader (hands-on)",
-        "org": "Indo Trans Logistics — Ho Chi Minh City",
-        "dates": "Jul 2023 – Mar 2026",
-        "desc": "Architected the Angular frontend for all 3 portals of Indo Trans Logistics' VELA platform — a single-application Core Portal and an Nx-based Micro Frontend platform (1 host + multiple remotes) for the multi-tenant Customer and Supplier Portals. Cut the Core Portal's initial bundle from 12 MB to 3 MB through bundle analysis, code splitting and route-based lazy loading. Built Docker/Kubernetes CI/CD across 4 repositories with Jasmine unit tests and SonarQube quality gates, and refactored legacy UI modules (Bootstrap → Tailwind) while keeping production releases stable. Led the team of 8 frontend developers — hands-on throughout — in a 60-person program."
-      },
-      {
-        "role": "Senior Frontend Developer",
-        "org": "AMIT Group Joint Stock Company — Ho Chi Minh City",
-        "dates": "Dec 2021 – Jul 2023",
-        "desc": "Developed and delivered enterprise and client-facing web applications with React/Next.js in TypeScript, using Server-Side Rendering (SSR) for SEO-critical, data-heavy views (SOGUS, Medbuy). Built and integrated REST APIs with Node.js (NestJS) and Laravel, and deployed on Linux with Docker. Led small frontend teams (3–5 developers) across concurrent client projects, with estimation, technical scoping and direct customer communication alongside delivery."
-      },
-      {
-        "role": "Frontend Developer",
-        "org": "AMIT Group Joint Stock Company — Ho Chi Minh City",
-        "dates": "Jun 2018 – Dec 2021",
-        "desc": "Built responsive web applications with React, Angular and WordPress for enterprise clients; developed fullstack features with PHP/Laravel and MySQL (Kensa Order System)."
-      },
-      {
-        "role": "Frontend Internship",
-        "org": "AMIT Group — Ho Chi Minh City",
-        "dates": "Jun 2017 – Dec 2017",
-        "desc": "PSD-to-HTML/CSS implementation and AJAX-driven interactions, supporting senior developers before returning full-time after graduation."
-      }
-    ]
+    "columns": { "role": "Role", "org": "Company", "when": "Dates" },
+    "now": "now",
+    "roles": {
+      "fpt": "Senior Frontend Developer",
+      "teamLeader": "Frontend Team Leader (hands-on)",
+      "senior": "Senior Frontend Developer",
+      "developer": "Frontend Developer",
+      "intern": "Frontend Intern"
+    },
+    "projects": { "fpt": "UAV project" },
+    "educationTitle": "Education",
+    "education": {
+      "degree": "Bachelor of Information Technology",
+      "school": "University of Transport and Communications, Ho Chi Minh City Campus",
+      "when": "Oct 2013 – May 2018"
+    }
   },
   "skills": {
     "title": "Skills",
-    "tag": "what I'd defend in an interview",
-    "lines": [
-      {
-        "k": "Frontend",
-        "v": "**React, Next.js, Angular (Signals, Standalone Components), TypeScript, RxJS** — Redux Toolkit, TanStack Query, Zustand, Reactive Forms, React Testing Library, Tailwind, Angular Material, Material UI, Ant Design"
+    "lang": "en",
+    "hint": "Pick a group to see where I used it, or pick a project.",
+    "atProject": "At {project}: {groups}.",
+    "onGroup": "{group}: {projects}.",
+    "projectsLabel": "Projects, oldest first",
+    "projects": { "kensa": "Kensa", "amit": "AMIT", "sogus": "SOGUS", "medbuy": "Medbuy", "vela": "VELA" },
+    "groups": {
+      "frontend": {
+        "name": "Frontend",
+        "items": ["React", "Next.js (SSR/SSG)", "TypeScript", "JavaScript", "HTML5", "CSS3/SCSS", "Angular", "Webpack", "Vite"],
+        "stops": {
+          "kensa": "React",
+          "sogus": "React/Next.js (Pages Router) for candidates, Angular for administration",
+          "medbuy": "React/Next.js, responsive and design-accurate",
+          "vela": "Angular and TypeScript across all three portals"
+        }
       },
-      {
-        "k": "Architecture & delivery",
-        "v": "**Nx Monorepo, Micro Frontend, Module Federation, SSR/CSR/SSG rendering strategies** — Docker, Kubernetes, GitLab CI, SonarQube, Lighthouse, PageSpeed Insights, AWS (EC2, S3, CloudFront, Route 53, IAM)"
+      "performance": {
+        "name": "Web performance",
+        "items": ["Bundle analysis and optimization", "Code splitting", "Lazy loading", "Lighthouse", "PageSpeed Insights"],
+        "stops": {
+          "vela": "Bundle analysis, dependency import optimization, code splitting and route-based lazy loading on Core Portal"
+        }
       },
-      {
-        "k": "Testing & Quality",
-        "v": "Jest, React Testing Library, Cypress, Jasmine, integration & E2E testing, SonarQube, debugging & troubleshooting"
+      "architecture": {
+        "name": "Architecture",
+        "items": ["Nx Monorepo", "Micro Frontend", "Module Federation", "SSR/CSR/SSG rendering strategies"],
+        "stops": {
+          "sogus": "SSR for SEO-critical pages and a fast first render",
+          "medbuy": "SSR for product and listing pages",
+          "vela": "Nx Micro Frontend for Customer Portal and Supplier Portal, each with one Host and multiple Remotes"
+        }
       },
-      {
-        "k": "AI-assisted Dev",
-        "v": "Claude Code, Cursor — coding, debugging, refactoring, test generation"
+      "data": {
+        "name": "State and data",
+        "items": ["Redux Toolkit", "TanStack Query", "Zustand", "RxJS", "REST API", "GraphQL"],
+        "stops": {
+          "medbuy": "REST API contracts with the backend team, integrated into the Next.js frontend"
+        }
       },
-      {
-        "k": "Also",
-        "v": "Node.js (NestJS, Express), PHP (Laravel), REST API, GraphQL"
+      "quality": {
+        "name": "Testing and quality",
+        "items": ["Jest", "React Testing Library", "Cypress", "Integration and E2E testing", "Debugging and troubleshooting", "Jasmine", "SonarQube"],
+        "stops": {
+          "vela": "Jasmine unit tests and SonarQube quality gates, required for release across 4 repositories"
+        }
+      },
+      "devops": {
+        "name": "DevOps and tooling",
+        "items": ["Docker", "Kubernetes", "Linux", "CI/CD", "Git", "AWS (EC2, S3, CloudFront, Route 53, IAM)"],
+        "stops": {
+          "kensa": "Deployed and ran it in production on Linux with Docker",
+          "medbuy": "Took part in deployment with Docker",
+          "vela": "CI/CD that packaged the frontends as Docker images and deployed them to Kubernetes; GitFlow branching for the team of 8"
+        }
+      },
+      "ui": {
+        "name": "UI libraries",
+        "items": ["Material UI", "Ant Design", "Tailwind", "Bootstrap"],
+        "stops": {
+          "vela": "Moved legacy UI modules from Bootstrap to Tailwind"
+        }
+      },
+      "backend": {
+        "name": "Backend",
+        "items": ["Node.js (NestJS, Express)", "PHP (Laravel)"],
+        "stops": {
+          "kensa": "Laravel REST APIs for orders and reporting, on MySQL",
+          "amit": "REST APIs in NestJS and Laravel"
+        }
+      },
+      "ai": {
+        "name": "AI-assisted development",
+        "items": ["Claude Code", "Cursor"],
+        "usedFor": "Used for coding, debugging, refactoring and test generation."
       }
-    ]
+    }
   },
   "contact": {
-    "title": "Contact",
-    "tag": "open to Senior Frontend (React/Next.js) and Frontend Lead roles — especially where scale, performance and product ownership matter",
-    "headlinePre": "Building something where scale, performance and team quality matter? ",
-    "email": "btphuong2017@gmail.com",
-    "phone": "+84 964 747 781",
-    "location": "Ho Chi Minh City, Vietnam",
-    "linkedinUrl": "https://www.linkedin.com/in/phuong-bui-thanh-3035a0227/",
-    "links": {
-      "email": "Email",
-      "linkedin": "LinkedIn"
+    "title": "Get in touch",
+    "linkedin": "LinkedIn",
+    "cv": "Download CV (PDF)",
+    "block": {
+      "label": "Drawing title block",
+      "drawnBy": "Drawn by",
+      "role": "Title",
+      "roleValue": "Senior Frontend Developer",
+      "place": "Drawn in",
+      "placeValue": "Ho Chi Minh City",
+      "scale": "Scale",
+      "scaleValue": "Illustrative drawing, not to scale"
     }
   },
   "footer": {
-    "copyright": "© 2026 Phuong Bui Thanh",
-    "note": "Plex Sans/Mono · same system as the CV you just downloaded"
+    "copyright": "© 2026 Bùi Thanh Phương",
+    "type": "Set in Bricolage Grotesque and Be Vietnam Pro"
   }
 }
