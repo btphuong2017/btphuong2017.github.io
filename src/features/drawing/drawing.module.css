@@ -1,0 +1,445 @@
+/* VELA drawing. Desktop: text column, sticky stage behind, parts list on the right.
+   Phone: the stage sticks to the top, the beats and the parts list scroll beneath it. */
+
+.rig {
+  --col: clamp(300px, 26vw, 420px);
+  --list: clamp(220px, 17vw, 280px);
+  position: relative;
+  margin-top: var(--gap);
+}
+
+.stage {
+  background: var(--paper);
+  overflow: hidden;
+}
+
+.poster,
+.canvas,
+.overlay,
+.labels {
+  position: absolute;
+}
+
+.poster {
+  display: block;
+  transition: opacity 0.35s;
+}
+
+.poster text {
+  font-family: var(--text);
+  font-weight: 600;
+  fill: var(--ink);
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 5px;
+  stroke-linejoin: round;
+}
+
+.canvas {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.35s;
+  touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.canvas:active {
+  cursor: grabbing;
+}
+
+.rig[data-gl="on"] .canvas {
+  opacity: 1;
+}
+
+.rig[data-gl="on"] .poster {
+  opacity: 0;
+}
+
+.rig[data-gl="off"] .canvas {
+  pointer-events: none;
+}
+
+.overlay,
+.labels {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.callout {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  font: 600 15px/1.2 var(--text);
+  white-space: nowrap;
+  background: var(--paper);
+  padding: 2px 6px 3px;
+}
+
+.tag {
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  max-width: 75%;
+  font: 800 24px/1.1 var(--display);
+  letter-spacing: -0.02em;
+  background: var(--paper);
+  padding: 2px 6px 4px 0;
+  display: none;
+}
+
+.note {
+  position: absolute;
+  bottom: 18px;
+  font-size: var(--small);
+  line-height: 1.4;
+  background: var(--paper);
+}
+
+/* A picked layer, poster only: the rest steps back. */
+.rig[data-sel="0"] .poster g[data-l]:not([data-l="0"]),
+.rig[data-sel="1"] .poster g[data-l]:not([data-l="1"]),
+.rig[data-sel="2"] .poster g[data-l]:not([data-l="2"]),
+.rig[data-sel="3"] .poster g[data-l]:not([data-l="3"]),
+.rig[data-sel="4"] .poster g[data-l]:not([data-l="4"]) {
+  opacity: 0.16;
+}
+
+/* ---------- beats ---------- */
+
+.beat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.beat h2 {
+  font-size: clamp(40px, 4.2vw, 64px);
+  line-height: 1.02;
+}
+
+.beat h3 {
+  font-size: clamp(30px, 2.7vw, 42px);
+  line-height: 1.06;
+}
+
+.beat p {
+  max-width: 30em;
+}
+
+.beatNote {
+  font-size: var(--small);
+}
+
+/* ---------- parts list ---------- */
+
+.parts h3 {
+  font-size: clamp(30px, 2.7vw, 42px);
+  line-height: 1.06;
+  margin-bottom: 8px;
+}
+
+.parts ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.parts li > p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.parts button {
+  all: unset;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 2px 0 4px;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.parts button:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* Each name starts with a short leader tick: the end of the leader the drawing sends to it. */
+.parts li {
+  --line: var(--ink);
+  --line-text: var(--ink);
+}
+
+.parts li[data-line="inside"] {
+  --line: var(--inside);
+  --line-text: var(--inside);
+}
+
+/* Red text on paper is 3.2:1, so the name takes the darker red (6:1); the tick keeps the line red. */
+.parts li[data-line="outside"] {
+  --line: var(--outside);
+  --line-text: var(--outside-2);
+}
+
+.parts b {
+  position: relative;
+  display: inline-block;
+  font: 800 23px/1.1 var(--display);
+  letter-spacing: -0.02em;
+  padding-left: 26px;
+}
+
+.parts b::before,
+.parts b::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+.parts b::before {
+  width: 18px;
+  border-top: 1px solid var(--ink);
+  opacity: 0.4;
+}
+
+.parts b::after {
+  width: 7px;
+  height: 7px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: var(--line);
+  opacity: 0;
+}
+
+.parts button span {
+  display: block;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+/* The live or picked row: the name in its line colour (ink for the shared layers) and a heavy
+   tick. A picked row also gets the leader's dot. No fill behind the name. */
+.parts li[data-live] b,
+.parts button[aria-pressed="true"] b {
+  color: var(--line-text);
+}
+
+.parts li[data-live] b::before,
+.parts button[aria-pressed="true"] b::before {
+  border-top: 3px solid var(--line);
+  margin-top: -1px;
+  opacity: 1;
+}
+
+.parts button[aria-pressed="true"] b::after {
+  opacity: 1;
+}
+
+.more {
+  padding-top: 4px;
+}
+
+.hint {
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* ---------- desktop ---------- */
+
+@media (min-width: 1000px) {
+  .rig {
+    margin-top: 72px;
+    display: grid;
+    grid-template-columns: var(--col) minmax(0, 1fr) var(--list);
+    padding-inline: var(--m);
+  }
+
+  .stage {
+    grid-area: 1 / 1 / 3 / -1;
+    align-self: start;
+    position: sticky;
+    top: 0;
+    height: 100svh;
+    margin-inline: calc(-1 * var(--m));
+  }
+
+  .poster {
+    left: calc(var(--col) + var(--m));
+    top: 48px;
+    width: calc(100% - var(--col) - var(--list) - 2 * var(--m) - 16px);
+    height: calc(100% - 112px);
+  }
+
+  .note {
+    right: calc(var(--list) + var(--m) + 48px);
+  }
+
+  .posterBare {
+    display: none;
+  }
+
+  .beats {
+    grid-area: 1 / 1 / 2 / 2;
+    position: relative;
+    z-index: 1;
+  }
+
+  .beat {
+    min-height: 88svh;
+    padding-block: 48px;
+  }
+
+  /* The model sits at the top of the stage in the overview; the heading starts level with it. */
+  .beat:first-child {
+    min-height: 100svh;
+    justify-content: flex-start;
+  }
+
+  .parts {
+    grid-area: 1 / 3 / 2 / 4;
+    align-self: start;
+    position: sticky;
+    top: 0;
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: safe center;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .parts > * {
+    pointer-events: auto;
+  }
+
+  /* The whole list fits one screen at 1024 × 768 too. */
+  .parts h3 {
+    font-size: clamp(26px, 2.7vw, 42px);
+  }
+
+  .parts b {
+    font-size: clamp(19px, 1.6vw, 23px);
+  }
+
+  .parts ul {
+    gap: clamp(4px, 0.7vw, 10px);
+  }
+
+  .parts li > p {
+    font-size: clamp(13px, 1vw, 14px);
+  }
+}
+
+/* 1000 to 1279: no room for three columns with a large drawing. The parts list follows the
+   beats in the text column, and the drawing takes everything right of it. */
+@media (min-width: 1000px) and (max-width: 1279px) {
+  .rig {
+    grid-template-columns: var(--col) minmax(0, 1fr);
+  }
+
+  .poster {
+    width: calc(100% - var(--col) - 2 * var(--m) - 24px);
+  }
+
+  .note {
+    right: var(--m);
+  }
+
+  .parts {
+    grid-area: 2 / 1 / 3 / 2;
+    position: relative;
+    height: auto;
+    display: block;
+    padding-block: 48px 160px;
+  }
+}
+
+/* ---------- phone and tablet ---------- */
+
+@media (max-width: 999px) {
+  .rig {
+    --stage: 38svh;
+  }
+
+  .stage {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    height: var(--stage);
+  }
+
+  .poster {
+    left: var(--m);
+    top: 40px;
+    width: calc(100% - 2 * var(--m));
+    height: calc(100% - 72px);
+  }
+
+  .tag {
+    left: var(--m);
+    top: 8px;
+    font-size: 20px;
+  }
+
+  .posterWide {
+    display: none;
+  }
+
+  .rig[data-gl="on"] .tag {
+    display: block;
+  }
+
+  .note {
+    left: var(--m);
+    right: var(--m);
+    bottom: 6px;
+    font-size: 13px;
+  }
+
+  .beats,
+  .parts {
+    padding-inline: var(--m);
+  }
+
+  /* Each beat fits the reading window under the stage, heading and body together, with only a
+     little paper before the next. */
+  .beat {
+    min-height: calc((100svh - var(--stage)) * 0.6);
+    padding-block: 20px;
+    gap: 12px;
+  }
+
+  .beat h2 {
+    font-size: 34px;
+  }
+
+  .beat h3 {
+    font-size: 28px;
+  }
+
+  .parts {
+    padding-block: 24px 48px;
+  }
+}
+
+/* Tablet: a taller stage, so the drawing is the larger part of the screen. */
+@media (min-width: 600px) and (max-width: 999px) {
+  .rig {
+    --stage: 55svh;
+  }
+}

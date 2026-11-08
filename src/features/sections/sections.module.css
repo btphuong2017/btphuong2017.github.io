@@ -1,0 +1,473 @@
+/* ---------- nav ---------- */
+
+.skip {
+  position: absolute;
+  left: var(--m);
+  top: 8px;
+  z-index: 10;
+  padding: 8px 12px;
+  background: var(--ink);
+  color: var(--paper);
+  transform: translateY(-200%);
+}
+
+.skip:focus {
+  transform: none;
+}
+
+.nav {
+  display: flex;
+  align-items: baseline;
+  gap: 8px 32px;
+  padding-block: 14px 0;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.mark {
+  font: 800 1em/1.3 var(--display);
+  letter-spacing: -0.01em;
+}
+
+.links {
+  margin-left: auto;
+}
+
+.links,
+.tools,
+.locales {
+  display: flex;
+  gap: 20px;
+}
+
+.locales {
+  gap: 10px;
+}
+
+.locales a[aria-current] {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ---------- first screen ---------- */
+
+.hero {
+  min-height: calc(100svh - 56px);
+  display: flex;
+  flex-direction: column;
+}
+
+.heroText {
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 0 24px;
+  align-items: start;
+}
+
+.name {
+  grid-column: 1 / -1;
+  /* One line wall to wall: the name is about 7.75em wide at this weight. */
+  font-size: calc(100cqw / 7.8);
+  /* Fixed optical size, or the width-to-size ratio changes with the size. */
+  font-variation-settings: "opsz" 96;
+  line-height: 1.1;
+  padding-block: 0.1em 0;
+  white-space: nowrap;
+  text-wrap: nowrap;
+}
+
+.name span {
+  white-space: nowrap;
+}
+
+.thesis {
+  grid-column: 1 / span 4;
+  font: 800 var(--lead)/1.1 var(--display);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.sentence {
+  grid-column: 5 / span 8;
+  max-width: 50em;
+}
+
+.heroMap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: clamp(12px, 1.4vw, 20px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* The name moves but never fades: it is the LCP. */
+  .name {
+    animation: settle 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  .thesis,
+  .sentence,
+  .heroMap {
+    animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.12s both;
+  }
+
+  @keyframes settle {
+    from {
+      transform: translateY(14px);
+    }
+  }
+}
+
+/* ---------- sheets ---------- */
+
+.sheets {
+  display: grid;
+  gap: clamp(72px, 9vw, 150px);
+  margin-top: clamp(32px, 4vw, 64px);
+}
+
+.sheet {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 16px 24px;
+  align-items: start;
+  scroll-margin-top: 24px;
+}
+
+.sheet h3 {
+  grid-column: 1 / -1;
+}
+
+.figure {
+  margin: 0;
+}
+
+.plate {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* The VELA callout style: text face at 600, with a paper halo where it crosses a line. */
+.plateText {
+  font-family: var(--text);
+  font-weight: 600;
+  fill: var(--ink);
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 5px;
+  stroke-linejoin: round;
+}
+
+.case {
+  display: grid;
+  gap: 14px;
+  max-width: 40em;
+}
+
+.meta {
+  font-weight: 600;
+}
+
+.sogus .figure {
+  grid-column: 1 / span 6;
+}
+
+.sogus .case {
+  grid-column: 8 / span 5;
+}
+
+.medbuy h3 {
+  grid-column: 7 / -1;
+  grid-row: 1;
+}
+
+.medbuy .figure {
+  grid-column: 7 / -1;
+  grid-row: 2;
+}
+
+.medbuy .case {
+  grid-column: 1 / span 5;
+  grid-row: 2;
+  align-self: end;
+}
+
+.kensa .figure {
+  grid-column: 1 / span 6;
+}
+
+.kensa .case {
+  grid-column: 7 / span 5;
+}
+
+.illustrative {
+  margin-top: 32px;
+  font-size: var(--fs-small);
+}
+
+.earlier {
+  margin-top: clamp(72px, 9vw, 150px);
+  padding-block: clamp(48px, 6vw, 96px);
+  background: var(--paper-2);
+}
+
+.earlierGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px clamp(24px, 3vw, 48px);
+  margin-top: clamp(20px, 3vw, 40px);
+}
+
+.when {
+  font: 800 var(--fs-lead)/1.2 var(--display);
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+
+/* ---------- experience ---------- */
+
+.table {
+  width: 100%;
+  margin-top: clamp(24px, 3vw, 48px);
+  border-collapse: collapse;
+  border-top: 2px solid var(--ink);
+}
+
+.table th,
+.table td {
+  padding: 12px 24px 12px 0;
+  border-bottom: 1px solid var(--ink);
+  text-align: left;
+  vertical-align: baseline;
+  font-weight: 400;
+}
+
+.table tbody th {
+  font-weight: 600;
+}
+
+.table td:last-child,
+.table thead th:last-child {
+  padding-right: 0;
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.table .tableGroup {
+  padding-top: 36px;
+  font: 800 var(--fs-lead)/1.2 var(--display);
+  letter-spacing: -0.01em;
+}
+
+/* ---------- contact ---------- */
+
+.contact {
+  background: var(--sun);
+  padding-block: clamp(56px, 7vw, 120px) clamp(24px, 3vw, 40px);
+  scroll-margin-top: 0;
+}
+
+.contactIn {
+  container-type: inline-size;
+}
+
+.email {
+  display: block;
+  /* 22 characters, one line wall to wall at every width. */
+  font: 800 calc(100cqw / 11.4)/1.16 var(--display);
+  font-variation-settings: "opsz" 96;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+  margin-top: 0.1em;
+  text-decoration-thickness: 0.05em;
+}
+
+.contactFoot {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 32px 24px;
+  align-items: end;
+  margin-top: clamp(32px, 5vw, 80px);
+}
+
+.contactLinks {
+  grid-column: 1 / span 5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+  font: 800 var(--fs-lead)/1.3 var(--display);
+  letter-spacing: -0.01em;
+}
+
+/* A real drawing's title block: the one place lines belong outside the drawing itself. */
+.titleBlock {
+  grid-column: 7 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0;
+  border: 2px solid var(--ink);
+}
+
+.titleBlock > div {
+  padding: 8px 12px 10px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.titleBlock > div:not(.wide):nth-child(2) {
+  border-right: 1px solid var(--ink);
+}
+
+.titleBlock > div:last-child {
+  border-bottom: 0;
+}
+
+.titleBlock .wide {
+  grid-column: 1 / -1;
+}
+
+.titleBlock dt {
+  font-size: var(--fs-small);
+  line-height: 1.4;
+}
+
+.titleBlock dd {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.titleBlock .blockName {
+  font: 800 var(--fs-lead)/1.2 var(--display);
+  letter-spacing: -0.02em;
+}
+
+/* ---------- footer ---------- */
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 24px;
+  padding-block: 16px;
+  font-size: var(--fs-small);
+}
+
+/* ---------- phone: its own composition, not a squeezed desktop ---------- */
+
+@media (max-width: 999px) {
+  .sentence {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+  }
+
+  .thesis {
+    grid-column: 1 / -1;
+  }
+
+  .sheet h3,
+  .sogus .figure,
+  .sogus .case,
+  .medbuy h3,
+  .medbuy .figure,
+  .medbuy .case,
+  .kensa .figure,
+  .kensa .case {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .figure {
+    max-width: 600px;
+  }
+
+  .earlierGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .contactLinks,
+  .titleBlock {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding-top: 10px;
+  }
+
+  .nav a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Source order is name, language and CV, links, so Tab follows what is seen. */
+  .links {
+    grid-column: 1 / -1;
+    margin-left: 0;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .hero {
+    min-height: 0;
+  }
+
+  /* Two lines, far bigger than one line could be. */
+  .name {
+    white-space: normal;
+    text-wrap: wrap;
+    font-size: calc(100cqw / 4.72);
+    line-height: 1.06;
+  }
+
+  .name span {
+    display: block;
+  }
+
+  .thesis {
+    margin-top: 10px;
+  }
+
+  .table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .table tr {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .table th,
+  .table td,
+  .table td:last-child {
+    display: block;
+    padding: 0;
+    border: 0;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .table tbody .tableGroup {
+    padding-top: 24px;
+  }
+}

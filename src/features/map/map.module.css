@@ -1,0 +1,333 @@
+.map {
+  padding-inline: var(--m);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "choice"
+    "map"
+    "hint"
+    "legend";
+  gap: 12px;
+}
+
+.scroller,
+.tall {
+  grid-area: map;
+}
+
+/* Below poster width the map keeps a readable scale (labels 15 units, 13.7 px or more) and
+   scrolls inside its own strip. rtl only to start the strip at its right end, the newest years. */
+.scroller {
+  margin-inline: calc(-1 * var(--m));
+  padding: 0 var(--m) 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  direction: rtl;
+  scrollbar-color: var(--ink) var(--paper-2);
+}
+
+.wide,
+.tall {
+  display: block;
+  width: 100%;
+  height: auto;
+  direction: ltr;
+}
+
+.wide {
+  min-width: 1240px;
+}
+
+.tall,
+.forTall {
+  display: none;
+}
+
+.hint {
+  grid-area: hint;
+  font-size: var(--small);
+  font-weight: 600;
+}
+
+/* ---------- line choice ---------- */
+
+.choice {
+  grid-area: choice;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: var(--small);
+}
+
+.choice[hidden] {
+  display: none;
+}
+
+.choice p {
+  margin-right: 8px;
+  font-weight: 600;
+}
+
+.choice button {
+  min-height: 40px;
+  padding: 6px 14px;
+  border: 3px solid;
+  border-radius: 0;
+  font: 600 var(--small) / 1.2 var(--text);
+  cursor: pointer;
+}
+
+.choice .pick_inside {
+  background: var(--inside);
+  border-color: var(--inside);
+  color: #fff;
+}
+
+.choice .pick_outside {
+  background: var(--outside);
+  border-color: var(--outside);
+  color: var(--ink);
+}
+
+.choice .pick_both {
+  background: transparent;
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.choice button[aria-pressed="true"] {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
+}
+
+/* The line not chosen turns to an outline in its own colour (blue 6.6:1, red 3.2:1 on paper)
+   with ink text (15:1): quieter, still legible, and not opacity. */
+.map[data-line="inside"] .pick_outside,
+.map[data-line="outside"] .pick_inside {
+  background: transparent;
+  color: var(--ink);
+}
+
+.legend {
+  grid-area: legend;
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  font-size: var(--small);
+}
+
+.swatch {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  background: var(--sun);
+}
+
+/* ---------- the drawing ---------- */
+
+.column {
+  fill: var(--sun);
+}
+
+.strokeInside {
+  stroke: var(--inside);
+}
+
+.strokeOutside {
+  stroke: var(--outside);
+}
+
+.fillInside {
+  fill: var(--inside);
+}
+
+.fillOutside {
+  fill: var(--outside);
+}
+
+.track,
+.terminus {
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: butt;
+}
+
+.paper {
+  fill: var(--paper);
+}
+
+.cut {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.stop {
+  fill: var(--paper);
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.band,
+.ink {
+  fill: var(--ink);
+}
+
+.wide text,
+.tall text {
+  fill: var(--ink);
+  font-family: var(--text);
+}
+
+.wide .onBand,
+.tall .onBand {
+  fill: var(--paper);
+  font-weight: 600;
+}
+
+.name,
+.title {
+  font-family: var(--display) !important;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.title {
+  letter-spacing: -0.01em;
+}
+
+.sb {
+  font-weight: 600;
+}
+
+.date {
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+.hit {
+  fill: transparent;
+}
+
+.station {
+  cursor: pointer;
+}
+
+.station:focus {
+  outline: none;
+}
+
+.station:focus-visible .hit {
+  stroke: var(--ink);
+  stroke-width: 4;
+}
+
+.station:hover .name,
+.station:focus-visible .name {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+/* ---------- dim the other line ---------- */
+
+.inside,
+.outside {
+  transition: opacity 0.3s;
+}
+
+.map[data-line="inside"] .outside,
+.map[data-line="outside"] .inside {
+  opacity: 0.16;
+}
+
+/* ---------- entrance: the lines draw in once ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .track {
+    stroke-dasharray: 1 1;
+    animation: draw 1.4s cubic-bezier(0.5, 0, 0.2, 1) 0.25s both;
+  }
+
+  .outside.track {
+    animation-delay: 0.4s;
+  }
+
+  .spur .track {
+    animation-duration: 0.6s;
+    animation-delay: 1.3s;
+  }
+
+  .terminus {
+    animation: appear 0.2s 1.9s both;
+  }
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+    }
+  }
+
+  @keyframes draw {
+    from {
+      stroke-dashoffset: 1;
+    }
+  }
+}
+
+/* Poster width: no scroll; the control sits in the map's empty corner, before 2018. */
+@media (min-width: 1320px) {
+  .map {
+    position: relative;
+    grid-template-areas:
+      "map"
+      "legend";
+  }
+
+  .choice {
+    position: absolute;
+    top: 0;
+    left: var(--m);
+    width: 390px;
+    flex-wrap: wrap;
+  }
+
+  .hint {
+    display: none;
+  }
+}
+
+/* ---------- phone: the map turns, time runs down ---------- */
+
+@media (max-width: 699px) {
+  .scroller,
+  .hint,
+  .forWide {
+    display: none;
+  }
+
+  .tall {
+    display: block;
+  }
+
+  .forTall {
+    display: inline;
+  }
+
+  .map > * {
+    max-width: 520px;
+  }
+
+  /* Two rows: the label and Both, then the two lines side by side. */
+  .choice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .choice button {
+    min-height: 48px;
+    padding-inline: 8px;
+  }
+}

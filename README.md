@@ -1,72 +1,57 @@
 # Portfolio
 
-Personal portfolio site built with **Next.js 16**, **React 19**, **Tailwind CSS 4**, and **shadcn/ui**. Single-page layout with Hero, Experience, Projects, and Skills sections, responsive design, and dark/light theme support.
+Personal site of Bùi Thanh Phương. One page, English and Vietnamese: a career drawn as two lines, the people inside a company and the people outside it, then the biggest interchange (VELA) taken apart.
 
-## Tech stack
+Next.js 16 static export on GitHub Pages. Server components by default, plain CSS, no UI or i18n libraries.
 
-- **Framework:** Next.js 16 (App Router)
-- **UI:** React 19, Tailwind CSS 4, shadcn/ui, Radix UI, Lucide icons
-- **i18n:** next-intl (locales: `en`, `vi`)
-- **Theming:** next-themes
-- **Language:** TypeScript 5
+## Run it
 
-## Prerequisites
-
-- Node.js 20+
-- npm (or pnpm / yarn)
-
-## Getting started
+Node.js 20+.
 
 ```bash
-# Install dependencies
 npm install
-
-# Run development server
-npm run dev
+npm run dev      # http://localhost:3000, / redirects to a locale
+npm run build    # static site in out/
+npm run lint
+npm run check    # dates-to-position and fact limits on the copy; needs Node 22.18+
 ```
 
-Open [http://localhost:3000](http://localhost:3000). The root path redirects to the default locale (`/vi`).
+## Edit the content
 
-### Other scripts
+| To change | Edit |
+|---|---|
+| Any sentence, in both languages | `src/messages/vi.json`, `src/messages/en.json` (a key missing from one fails the build) |
+| Dates, employers, stations, lines, email, phone, LinkedIn, CV path | `src/content/career.ts` |
+| Section order, per reader route | `src/features/sections/order.ts` |
+| Colours, spacing, type steps | `:root` in `src/app/globals.css` |
 
-| Script   | Description        |
-|----------|--------------------|
-| `npm run build` | Production build   |
-| `npm run start` | Run production server |
-| `npm run lint`  | Run ESLint         |
+`docs/concepts/DIRECTION.md` has the facts the copy must stay inside.
 
-## Project structure
+## Update the CV
 
-```
-src/
-├── app/                    # Next.js App Router
-│   ├── [locale]/           # Locale-specific layout & home page
-│   ├── layout.tsx         # Root layout (fonts, ThemeProvider)
-│   └── globals.css        # Tailwind + design tokens
-├── features/home/         # Home page sections
-│   ├── HeroSection.tsx
-│   ├── ExperienceSection.tsx
-│   ├── ProjectsSection.tsx
-│   └── SkillsSection.tsx
-├── shared/
-│   ├── components/        # Reusable UI (Section, Container, SectionHeader, ContentCard, Tag, AppHeader, AppFooter)
-│   └── utils/             # cn() etc.
-├── data/                  # Static content (JSON)
-│   ├── profile.json
-│   ├── experience.json
-│   ├── projects.json
-│   └── skills.json
-├── messages/               # i18n strings (en.json, vi.json)
-└── components/ui/          # shadcn/ui components
+The PDF in `public/` is printed from `docs/cv/cv.html`. Edit the HTML, then print it with Chrome (keeps the file name the site links to):
+
+```bash
+"C:/Program Files/Google/Chrome/Application/chrome.exe" --headless=new --no-pdf-header-footer \
+  --virtual-time-budget=10000 --print-to-pdf=public/CV-Bui-Thanh-Phuong-Senior-Frontend-Developer.pdf \
+  "file:///D:/Works/Pet Projects/portfolio/docs/cv/cv.html"
 ```
 
-## Customization
+Check that it is still two pages.
 
-- **Profile, experience, projects, skills:** Edit the JSON files in `src/data/`. Experience and projects use `summary` + `highlights` arrays for section text and bullet lists.
-- **Avatar:** Place your photo at `public/avatar.jpg`; the Hero section uses it automatically.
-- **Locales:** Default locale and supported locales are set in `src/app/[locale]/layout.tsx` and `src/app/page.tsx` (redirect). Message files live in `src/messages/`.
-- **Design system:** See [STYLEGUIDE.md](./STYLEGUIDE.md) for typography, spacing, cards, and layout patterns.
+## Routes
 
-## License
+- `/vi/`, `/en/`: the page. `/` and unknown paths redirect by script to the visitor's locale.
+- `/{locale}/for/recruiter/`, `engineer`, `lead`: the same sections in another order. Not linked from the nav, `noindex`, canonical is the locale home.
 
-Private project.
+## Deploy
+
+Pushing to `master` builds and deploys through `.github/workflows/nextjs.yml`.
+
+## Restore the previous site
+
+The site before this redesign is tagged `pre-creative-redesign` (local tag on commit `ce9f5a5`, which is also on `origin/feat/portfolio-redesign`):
+
+```bash
+git switch -c restore-old-site pre-creative-redesign
+```
